@@ -1,23 +1,18 @@
 package lena.library.dao;
 
         import lena.library.model.Author;
-        import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.dao.DataAccessException;
         import org.springframework.jdbc.core.JdbcTemplate;
         import org.springframework.jdbc.core.RowMapper;
-        import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
         import org.springframework.stereotype.Repository;
 //import org.springframework.stereotype.Repository;
 
         import javax.persistence.EntityManager;
-        import javax.persistence.EntityManagerFactory;
         import javax.persistence.Persistence;
         import javax.sql.DataSource;
         import java.sql.ResultSet;
         import java.sql.SQLException;
-        import java.util.Collections;
         import java.util.List;
-        import java.util.Map;
 
 @Repository
 public class AuthorDaoImpl implements AuthorDao {
@@ -27,15 +22,31 @@ public EntityManager em = Persistence.createEntityManagerFactory("LenaTest").cre
 
    // private NamedParameterJdbcOperations namedParameterJdbcOperations;
 
+    private DataSource dataSource;
+    private JdbcTemplate jdbcTemplate;
 
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
     @Override
     public int insert(Author author) {
-//        if (author.isNew()) {
+      if (author.isNew()) {
+          String SQL = "insert into data_genre.authors (name) values(?)";
+          jdbcTemplate.update(SQL, author.getName());
+          System.out.println("Author successfully created.\nName: " + author.getName() + ";\nId: " +
+                  author.getId() + ";\nBooks: " + author.getBooks() + "\n");
+         return 1;
 //            return namedParameterJdbcOperations.getJdbcOperations().update("insert into data_genre.authors (name) values(?)", author.getName());
-//        } else {
-//            return namedParameterJdbcOperations.getJdbcOperations().update("update data_genre.authorss set name=? where id=?", author.getName(), author.getId());
-//        }
-        return 0;
+     } else {
+          String SQL = "update data_genre.authors set name=? where id=?";
+          jdbcTemplate.update(SQL,  author.getName(), author.getId());
+          System.out.println("Author successfully created.\nName: " + author.getName() + ";\nId: " +
+                  author.getId() + ";\nBooks: " + author.getBooks() + "\n");
+          return 0;
+//            return namedParameterJdbcOperations.getJdbcOperations().update("update data_genre.authors set name=? where id=?", author.getName(), author.getId());
+       }
+
     }
 
     @Override
@@ -80,4 +91,5 @@ public EntityManager em = Persistence.createEntityManagerFactory("LenaTest").cre
             return new Author(id, name);
         }
     }
+
 }

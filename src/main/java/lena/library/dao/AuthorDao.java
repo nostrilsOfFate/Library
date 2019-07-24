@@ -10,7 +10,7 @@ public interface AuthorDao {
     int insert(Author author);
     Author getById(int id) throws DataAccessException;
     Author getByName(String name) throws DataAccessException;
-    List<Author> getAll();
-    int deleteById(int id);
+    List<Author> getAllAuthors();
+   int deleteById(int id);
     int deleteByName(String name);
 }

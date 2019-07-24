@@ -10,7 +10,7 @@ public interface AuthorService {
     //    private String name;
     //    private List<Book> books;
 
-    Integer addAuthor(String name);
+    Author addAuthor(String name);
 
     Integer deleteAuthorById(Integer id);
 

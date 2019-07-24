@@ -3,7 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class BookDaoImplTest {
 
-    @Autowired
-    private BookDao bookDao;
+//    @Autowired
+//    private BookDao bookDao;
 
 }

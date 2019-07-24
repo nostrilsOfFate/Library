@@ -1,13 +1,14 @@
 package lena.library.Service;
 
 import lena.library.dao.AuthorDao;
+
 import lena.library.model.Author;
-import lena.library.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class AuthorServiceImpl implements AuthorService {
     private final AuthorDao dao;
@@ -19,9 +20,13 @@ public class AuthorServiceImpl implements AuthorService {
 
 
     @Override
-    public Integer addAuthor(String name) {
-       Author author = new Author(null,name);
-       return dao.insert(author);
+    public Author addAuthor(String name) {
+        Author author = new Author(null, name);
+
+        if (dao.insert(author) == 1) {
+            return author;
+        } else
+            throw new ChangeExсeption("Exсeption in adding authors");
     }
 
     @Override
@@ -37,7 +42,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Integer updateAuthor(Integer id, String newName) {
-        Author author = new Author(id,newName);
+        Author author = new Author(id, newName);
         return dao.insert(author);
     }
 
@@ -61,6 +66,6 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public List<Author> getAllAuthors() {
-        return dao.getAll();
+        return dao.getAllAuthors();
     }
 }

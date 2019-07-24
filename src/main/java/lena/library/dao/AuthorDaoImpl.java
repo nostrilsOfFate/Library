@@ -1,62 +1,75 @@
 package lena.library.dao;
 
-import lena.library.model.Author;
-import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
-import org.springframework.stereotype.Repository;
+        import lena.library.model.Author;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.dao.DataAccessException;
+        import org.springframework.jdbc.core.JdbcTemplate;
+        import org.springframework.jdbc.core.RowMapper;
+        import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+        import org.springframework.stereotype.Repository;
+//import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+        import javax.persistence.EntityManager;
+        import javax.persistence.EntityManagerFactory;
+        import javax.persistence.Persistence;
+        import javax.sql.DataSource;
+        import java.sql.ResultSet;
+        import java.sql.SQLException;
+        import java.util.Collections;
+        import java.util.List;
+        import java.util.Map;
 
 @Repository
 public class AuthorDaoImpl implements AuthorDao {
+//data source
+//entity manager
+public EntityManager em = Persistence.createEntityManagerFactory("LenaTest").createEntityManager();
 
-    private final NamedParameterJdbcOperations namedParameterJdbcOperations;
+   // private NamedParameterJdbcOperations namedParameterJdbcOperations;
 
-    public AuthorDaoImpl(NamedParameterJdbcOperations namedParameterJdbcOperations) {
-        this.namedParameterJdbcOperations = namedParameterJdbcOperations;
-    }
 
     @Override
     public int insert(Author author) {
-        if (author.isNew()) {
-            return namedParameterJdbcOperations.getJdbcOperations().update("insert into data_genre.authors (name) values(?)", author.getName());
-        } else {
-            return namedParameterJdbcOperations.getJdbcOperations().update("update data_genre.authorss set name=? where id=?", author.getName(), author.getId());
-        }
+//        if (author.isNew()) {
+//            return namedParameterJdbcOperations.getJdbcOperations().update("insert into data_genre.authors (name) values(?)", author.getName());
+//        } else {
+//            return namedParameterJdbcOperations.getJdbcOperations().update("update data_genre.authorss set name=? where id=?", author.getName(), author.getId());
+//        }
+        return 0;
     }
 
     @Override
     public Author getById(int id) throws DataAccessException {
-        Map<String, Integer> params = Collections.singletonMap("id", id);
-        return namedParameterJdbcOperations.queryForObject("select * from data_genre.authors where id = :id", params, new AuthorMapper());
+//        Map<String, Integer> params = Collections.singletonMap("id", id);
+//        return namedParameterJdbcOperations.queryForObject("select * from data_genre.authors where id = :id", params, new AuthorMapper());
+    return em.find(Author.class, id);
     }
 
     @Override
     public Author getByName(String name) throws DataAccessException {
-        Map<String, String> params = Collections.singletonMap("name", name);
-        return namedParameterJdbcOperations.queryForObject("select * from data_genre.authors where name = :name", params, new AuthorMapper());
+//        Map<String, String> params = Collections.singletonMap("name", name);
+//        return namedParameterJdbcOperations.queryForObject("select * from data_genre.authors where name = :name", params, new AuthorMapper());
+  return null;
     }
 
     @Override
-    public List<Author> getAll() {
-        return namedParameterJdbcOperations.query("select * from data_genre.authors", new AuthorMapper());
+    public List<Author> getAllAuthors() {
+//        return namedParameterJdbcOperations.query("select * from data_genre.authors", new AuthorMapper());
+        return null;
     }
 
     @Override
     public int deleteById(int id) {
-        Map<String, Integer> params = Collections.singletonMap("name", id);
-        return namedParameterJdbcOperations.update("delete * from data_genre.authors where name = :name", params);
+//        Map<String, Integer> params = Collections.singletonMap("name", id);
+//////        return namedParameterJdbcOperations.update("delete * from data_genre.authors where name = :name", params);
+        return 0;
     }
 
     @Override
     public int deleteByName(String name) {
-        Map<String, String> params = Collections.singletonMap("name", name);
-        return namedParameterJdbcOperations.update("DELETE * from data_genre.authors where name = :name", params);
+//        Map<String, String> params = Collections.singletonMap("name", name);
+//        return namedParameterJdbcOperations.update("DELETE * from data_genre.authors where name = :name", params);
+        return 0;
     }
 
     private static class AuthorMapper implements RowMapper<Author> {

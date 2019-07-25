@@ -2,14 +2,21 @@
 //
 //import lena.library.dao.GenreDao;
 //import lena.library.model.Genre;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.dao.DataAccessException;
 //import org.springframework.stereotype.Service;
 //
 //import java.util.List;
+//import lombok.extern.slf4j.Slf4j;
+//
+//@Slf4j
 //
 //@Service
 //public class GenreServiceImpl implements GenreService {
+//    protected final Log logger = LogFactory.getLog(GenreServiceImpl.class);
+//
 //    private final GenreDao genreDao;
 //
 //    @Autowired

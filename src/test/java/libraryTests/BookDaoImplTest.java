@@ -1,3 +1,4 @@
+package libraryTests;
 
 import lena.library.dao.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;

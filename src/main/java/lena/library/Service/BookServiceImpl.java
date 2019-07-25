@@ -6,6 +6,8 @@
 //import lena.library.model.Author;
 //import lena.library.model.Book;
 //import lena.library.model.Genre;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.dao.DataAccessException;
 //import org.springframework.stereotype.Service;
@@ -13,8 +15,13 @@
 //import java.util.ArrayList;
 //import java.util.List;
 //import java.util.Set;
+//
+//import lombok.extern.slf4j.Slf4j;
+//
+//@Slf4j
 //@Service
 //public class BookServiceImpl implements BookService {
+//    protected final Log logger = LogFactory.getLog(BookServiceImpl.class);
 //    private final BookDao bookDao;
 //    private final AuthorDao authorDao;
 //        private final GenreDao genreDao;

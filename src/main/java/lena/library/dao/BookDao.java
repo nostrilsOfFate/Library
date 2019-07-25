@@ -10,11 +10,12 @@ public interface BookDao { //главная сущность, может в ра
     // можно добавлять авторов, где приходит сущность автора с уже добавленной книгой
     //мы перезаписываем эту сущность
 
-    void insert(Book book); //обновление
-    Book getById(int n) throws DataAccessException;
+    int insert(Book book); //обновление
+    void update(Book book);
+    Book getById(int id) throws DataAccessException;
     List<Book> getByName(String name) throws DataAccessException;
     List<Book> getAllBooks();
-    int deleteById(int id);
-    int deleteByName(String name);
+    void deleteById(int id);
+    void deleteByName(String name);
 
 }

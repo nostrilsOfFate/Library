@@ -3,26 +3,36 @@ package lena.library.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = "books")
+@Table(name = "data_genre.authors")
 public class Author {
     @Id
-    @GeneratedValue
-    @Getter
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter
+    @Column(name = "id")
+    @Getter
     private Integer id;
-    @Getter
+
     @Setter
-    private String name;
+    @Column(name = "name")
     @Getter
+    private String name;
+
+
     @Setter
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "data_genre.authors_books",
             joinColumns = @JoinColumn(name = "author_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id")
-    )    private List<Book> books;
+    )
+    @Getter
+    private List<Book> books = new ArrayList<Book>();
+
 
     public Author(String name) {
         this.id = null;

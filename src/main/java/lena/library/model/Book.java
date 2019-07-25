@@ -8,31 +8,52 @@ import java.util.Set;
 @Entity
 @EqualsAndHashCode(exclude = {"genres", "authors"})
 @NoArgsConstructor
+@Table(name = "data_genre.books")
 public class Book {
+
     @Id
-    @GeneratedValue
-    @Getter
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter
-   private Integer id;
+    @Column(name = "id")
     @Getter
+    private Integer id;
+
+
     @Setter
-   private String name;
+    @Column(name = "name")
     @Getter
+    private String name;
+
+
     @Setter
-   private Integer writtenYear;
+    @Column(name = "writtenYear")
     @Getter
+    private Integer writtenYear;
+
+
     @Setter
-   private String description;
+    @Column(name = "description")
     @Getter
+    private String description;
+
+
     @Setter
-   @ManyToMany(mappedBy = "data_genre.authors_books")
-   private Set<Author> authors;
+    @ManyToMany(mappedBy = "data_genre.authors_books")
     @Getter
+    private Set<Author> authors;
+
+
     @Setter
     @ManyToMany(mappedBy = "data_genre.genres_books")
+    @Getter
     private Set<Genre> genres;
-    private boolean readed;  //прочитано ли, по дефолту НЕТ
-//
+
+    @Column(name = "readed")
+    @Getter
+    @Setter
+    private boolean readed = false;  //прочитано ли, по дефолту НЕТ
+
+    //
 //    public Book(Book book) {
 //        this(book.getId(), book.getName(), book.getWrittenYear(), book.getDescription(), book.getAuthors(), book.getGenres());
 //    }

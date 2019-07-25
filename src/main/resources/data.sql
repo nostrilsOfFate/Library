@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS data_genre.books (
 );
 
 
+
 INSERT INTO data_genre.books (id, name, description, writtenYear)
 VALUES (1,
         'Ruslan and Lyudmila',

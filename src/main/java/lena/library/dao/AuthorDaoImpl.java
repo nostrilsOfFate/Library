@@ -1,9 +1,11 @@
 package lena.library.dao;
 
 import lena.library.model.Author;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.dialect.Database;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -12,23 +14,18 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+import javax.sql.DataSource;
+import java.net.URL;
+import java.sql.*;
 import java.util.List;
 
-@Slf4j
+//@Slf4j
 //@Transactional
-@Component
+@Repository
 public class AuthorDaoImpl implements AuthorDao {
     //  public EntityManager em = Persistence.createEntityManagerFactory("LenaTest").createEntityManager();
-//
 //    // private NamedParameterJdbcOperations namedParameterJdbcOperations;
 //    @Autowired
 //    private DataSource dataSource;
@@ -41,14 +38,25 @@ public class AuthorDaoImpl implements AuthorDao {
 
     protected final Log logger = LogFactory.getLog(AuthorDaoImpl.class);
 
-    @Autowired
+
+    @Mock
+    private DataSource dataSource;
+    @Mock
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+
+
     @Override
-    public int insert(Author author) {
+    public int insert(Author author) { //ставка
+
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into data_genre.authors (name) values(?)", new String[]{"id"});
+                PreparedStatement ps = connection.prepareStatement("insert into test.authors (name) values(?)", new String[]{"id"});
                 ps.setString(1, author.getName());
                 return ps;
             }
@@ -59,19 +67,20 @@ public class AuthorDaoImpl implements AuthorDao {
     }
 
     @Override
-    public void update(Author author) {
+    public void update(Author author) { //обновление текущего пользователя
         Object[] objects = new Object[]{
                 author.getName(),
                 author.getId()
         };
-        jdbcTemplate.update("UPDATE  data_genre.authors  SET name=? where id=?", objects);
+        jdbcTemplate.update("UPDATE  test.authors SET name= ? where id= ?", objects);
     }
 
     @Override
     public Author getById(int id) throws DataAccessException {
+        Object[] objects = new Object[]{id};
         Author author = null;
         try {
-            author = jdbcTemplate.queryForObject("select * from data_genre.authors where id = :id", new Object[]{id}, new RowMapper<Author>() {
+            author = jdbcTemplate.queryForObject("select * from test.authors where id = ?", objects, new RowMapper<Author>() {
                 public Author mapRow(ResultSet rs, int arg) throws SQLException {
                     Author author = new Author();
                     author.setId(rs.getInt("id"));
@@ -90,7 +99,7 @@ public class AuthorDaoImpl implements AuthorDao {
         Object[] objects = new Object[]{name};
         Author author = null;
         try {
-            author = jdbcTemplate.queryForObject("select * from data_genre.authors where name = :name", objects, new RowMapper<Author>() {
+            author = jdbcTemplate.queryForObject("select * from test.authors where name = ?", objects, new RowMapper<Author>() {
                 public Author mapRow(ResultSet rs, int rowNum) throws SQLException {
                     Author author = new Author();
                     author.setId(rs.getInt("id"));
@@ -106,7 +115,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public List<Author> getAllAuthors() {
-        return jdbcTemplate.query("SELECT * FROM data_genre.authors", new RowMapper<Author>() {
+        return jdbcTemplate.query("SELECT * FROM test.authors", new RowMapper<Author>() {
             public Author mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Author author = new Author();
                 author.setId(rs.getInt("id"));
@@ -118,12 +127,12 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public void deleteById(int id) {
-        jdbcTemplate.update("delete * from data_genre.authors where id = :id", id);
+        jdbcTemplate.update("delete from test.authors where id = ?", id);
     }
 
     @Override
     public void deleteByName(String name) {
-        jdbcTemplate.update("delete * from data_genre.authors where name = :name", name);
+        jdbcTemplate.update("delete from test.authors where name = ?", name);
     }
 
 //    @Override
@@ -238,4 +247,15 @@ public class AuthorDaoImpl implements AuthorDao {
 //        }
 //    }
 
+    public void deleteAll() {
+        jdbcTemplate.execute("delete from test.authors;");
+    }
+
+    public void createNewBase() {
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS data_genre.authors (\n" +
+                "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
+                "  name VARCHAR(50) NOT NULL,\n" +
+                "  PRIMARY KEY (id)\n" +
+                ");");
+    }
 }

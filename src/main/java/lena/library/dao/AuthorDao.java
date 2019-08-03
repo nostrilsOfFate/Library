@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface AuthorDao {
 
-    int insert(Author author); //вставить, добавить нового
+    Author insert(Author author); //вставить, добавить нового
 
-    void update(Author author);
+    Author update(Author author);
 
     Author getById(int id) throws DataAccessException;
 
@@ -18,11 +18,11 @@ public interface AuthorDao {
 
     List<Author> getAllAuthors();
 
-    void deleteById(int id);
+    Boolean deleteById(int id);
 
-    void deleteByName(String name);
+    Boolean deleteByName(String name);
 
-    void deleteAll();
+    Boolean deleteAll();
 
     void createNewBase();
 }

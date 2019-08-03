@@ -1,14 +1,11 @@
 package lena.library.dao;
 
 import lena.library.model.Author;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.hibernate.dialect.Database;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
@@ -17,31 +14,24 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.net.URL;
 import java.sql.*;
 import java.util.List;
 
-//@Slf4j
-//@Transactional
+@Slf4j
 @Repository
 public class AuthorDaoImpl implements AuthorDao {
-    //  public EntityManager em = Persistence.createEntityManagerFactory("LenaTest").createEntityManager();
-//    // private NamedParameterJdbcOperations namedParameterJdbcOperations;
-//    @Autowired
-//    private DataSource dataSource;
-//    private JdbcTemplate jdbcTemplate;
-//
-//    public void setDataSource(DataSource dataSource) {
-//        this.dataSource = dataSource;
-//        this.jdbcTemplate = new JdbcTemplate(dataSource);
-//    }
+    //TODO 1) ДОбавить ко всем методам логи (см пример BookDaoImpl) - НЕ СДЕЛАНО
+    //TODO 2) Удалить getter, setter, equals hash code. toString и тд - посмотреть на Data в инете(документация!!!) - готово
+    //TODO 3) УДАЛИТЬ ВЕСЬ ЗАКОМЕНЧЕННЫЙ КОД!!! - почти все, кроме классов что еще не сделаны
+    //TODO 4) Лить все в гит ( комитить чаще!!)
+    //TODO 5) Вынести конфигурацию в java класс либо удалить java классы конфига
+    //TODO 6) Переделать методы удаления - и тесты удаления
+    //TODO 7) Удалить main - он нафиг не нужен
+    //TODO 8) ПЕределать интерфейсы в сервис классах
+    // Соответственно create, get, update - возвращает сущность
 
-    protected final Log logger = LogFactory.getLog(AuthorDaoImpl.class);
-
-
-    @Mock
     private DataSource dataSource;
-    @Mock
+
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -52,7 +42,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
 
     @Override
-    public int insert(Author author) { //ставка
+    public Author insert(Author author) throws DataAccessException  { //ставка
 
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
@@ -63,16 +53,27 @@ public class AuthorDaoImpl implements AuthorDao {
         };
         KeyHolder holder = new GeneratedKeyHolder();
         jdbcTemplate.update(preparedStatementCreator, holder);
-        return holder.getKey().intValue();
+        try {
+            author.setId(holder.getKey().intValue());
+        } catch (InvalidDataAccessApiUsageException e) {
+           log.info("Invalid value of key");
+        }
+        return author;
     }
 
     @Override
-    public void update(Author author) { //обновление текущего пользователя
-        Object[] objects = new Object[]{
-                author.getName(),
-                author.getId()
-        };
-        jdbcTemplate.update("UPDATE  test.authors SET name= ? where id= ?", objects);
+    public Author update(Author author) { //обновление текущего пользователя
+        int i;
+        try {
+            Object[] objects = new Object[]{
+                    author.getName(),
+                    author.getId(),  };
+            i = jdbcTemplate.update("UPDATE  test.authors SET name = ? where id = ?", objects);
+        } catch (DataAccessException e) {
+            i=0;
+            log.info("Empty result in updating");
+        }
+        return (i!=0) ? author : null;
     }
 
     @Override
@@ -89,7 +90,7 @@ public class AuthorDaoImpl implements AuthorDao {
                 }
             });
         } catch (EmptyResultDataAccessException e) {
-            logger.info("Empty result in getting by id");
+            log.info("Empty result in getting by id");
         }
         return author;
     }
@@ -108,7 +109,7 @@ public class AuthorDaoImpl implements AuthorDao {
                 }
             });
         } catch (EmptyResultDataAccessException e) {
-            logger.info("Empty result in getting by name");
+            log.info("Empty result in getting by name");
         }
         return author;
     }
@@ -126,136 +127,32 @@ public class AuthorDaoImpl implements AuthorDao {
     }
 
     @Override
-    public void deleteById(int id) {
-        jdbcTemplate.update("delete from test.authors where id = ?", id);
+    public void deleteById(int id) throws DataAccessException {
+            jdbcTemplate.update("delete from test.authors where id = ?", id);
     }
 
     @Override
-    public void deleteByName(String name) {
-        jdbcTemplate.update("delete from test.authors where name = ?", name);
+    public void deleteByName(String name) throws DataAccessException {
+            jdbcTemplate.update("delete from test.authors where name = ?", name);
     }
 
-//    @Override
-//    public long insert(Author author) {
-//        PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
-//            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-//                PreparedStatement ps = connection.prepareStatement("insert into data_genre.authors (name) values(?)", new String[]{author.getName()});
-//                ps.setString(1, author.getName());
-//                ps.setLong(2, author.getId());
-//                return ps;
-//            }
-//        };
-//        KeyHolder holder = new GeneratedKeyHolder();
-//        jdbcTemplate.update(preparedStatementCreator, holder);
-//        return holder.getKey().longValue();
-////        Connection conn = null;
-////        int i = 0;
-////
-////        if (author.isNew()) {
-////            try {
-////                String SQL = "insert into authors (name) values(?)";
-////                conn = dataSource.getConnection();
-////                PreparedStatement ps = conn.prepareStatement(SQL);
-////                jdbcTemplate.update(SQL, author.getName());
-////                log.info("Author successfully created.\nName: " + author.getName() + ";\nId: " +
-////                        author.getId() + ";\nBooks: " + author.getBooks() + "\n");
-////                i = 1;
-////                ps.executeUpdate();
-////                ps.close();
-////            } catch (SQLException e) {
-////                throw new RuntimeException(e);
-////            } finally {
-////                //каждый раз закрываем соединение
-////                if (conn != null) {
-////                    try {
-////                        conn.close();
-////                    } catch (SQLException e) {
-////                    }
-////                }
-////            }
-////        }
-//////            return namedParameterJdbcOperations.getJdbcOperations().update("insert into data_genre.authors (name) values(?)", author.getName());
-////                else {
-////                    try {
-////                        String SQL = "update authors set name=? where id=?";
-////                        conn = dataSource.getConnection();
-////                        PreparedStatement ps = conn.prepareStatement(SQL);
-////                        jdbcTemplate.update(SQL, author.getName(), author.getId());
-////                        log.info("Author successfully created.\nName: " + author.getName() + ";\nId: " +
-////                                author.getId() + ";\nBooks: " + author.getBooks() + "\n");
-////                        i = 0;
-////                        ps.executeUpdate();
-////                        ps.close();
-////                    } catch (SQLException e) {
-////                        throw new RuntimeException(e);
-////                    } finally {//каждый раз закрываем соединение
-////                        if (conn != null) {
-////                            try { conn.close();
-////                            } catch (SQLException e) {}
-////                        }
-//////            return namedParameterJdbcOperations.getJdbcOperations().update("update data_genre.authors set name=? where id=?", author.getName(), author.getId());
-////                    }
-////                }return i;
-//    }
-//
-//    @Override
-//    public long update(Author author) {
-//        return 0;
-//    }
-//
-//
-//    @Override
-//    public Author getById(int id) throws DataAccessException {
-////        Map<String, Integer> params = Collections.singletonMap("id", id);
-////        return namedParameterJdbcOperations.queryForObject("select * from data_genre.authors where id = :id", params, new AuthorMapper());
-//        return em.find(Author.class, id);
-//    }
-//
-//    @Override
-//    public Author getByName(String name) throws DataAccessException {
-////        Map<String, String> params = Collections.singletonMap("name", name);
-////        return namedParameterJdbcOperations.queryForObject("select * from data_genre.authors where name = :name", params, new AuthorMapper());
-//        return null;
-//    }
-//
-//    @Override
-//    public List<Author> getAllAuthors() {
-////        return namedParameterJdbcOperations.query("select * from data_genre.authors", new AuthorMapper());
-//        return null;
-//    }
-//
-//    @Override
-//    public void deleteById(int id) {
-////        Map<String, Integer> params = Collections.singletonMap("name", id);
-////////        return namedParameterJdbcOperations.update("delete * from data_genre.authors where name = :name", params);
-//
-//    }
-//
-//    @Override
-//    public void deleteByName(String name) {
-////        Map<String, String> params = Collections.singletonMap("name", name);
-////        return namedParameterJdbcOperations.update("DELETE * from data_genre.authors where name = :name", params);
-//
-//    }
-//
-//    private static class AuthorMapper implements RowMapper<Author> {
-//        @Override
-//        public Author mapRow(ResultSet resultSet, int i) throws SQLException {
-//            int id = resultSet.getInt("id");
-//            String name = resultSet.getString("name");
-//            return new Author(id, name);
-//        }
-//    }
-
     public void deleteAll() {
-        jdbcTemplate.execute("delete from test.authors;");
+        try {
+            jdbcTemplate.execute("delete from test.authors;");
+        } catch (DataAccessException e) {
+            log.info("Empty result in all deleting");
+        }
     }
 
     public void createNewBase() {
-        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS data_genre.authors (\n" +
-                "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
-                "  name VARCHAR(50) NOT NULL,\n" +
-                "  PRIMARY KEY (id)\n" +
-                ");");
+        try {
+            jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS test.authors (\n" +
+                    "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
+                    "  name VARCHAR(50) NOT NULL,\n" +
+                    "  PRIMARY KEY (id)\n" +
+                    ");");
+        } catch (DataAccessException e) {
+            log.info("Empty result in creating new base");
+        }
     }
 }

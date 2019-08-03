@@ -6,9 +6,6 @@ import lena.library.model.Book;
 import java.util.List;
 
 public interface AuthorService {
-    // private Integer id;
-    //    private String name;
-    //    private List<Book> books;
 
     Author addAuthor(String name);
 
@@ -16,7 +13,7 @@ public interface AuthorService {
 
     Integer deleteAuthorByName(String name);
 
-    Integer updateAuthor(Integer id, String newName); //можно и по имени
+    Integer updateAuthor(Integer id, String newName);
 
     Author getAuthorById(Integer id);
 

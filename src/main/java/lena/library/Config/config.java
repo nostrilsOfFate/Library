@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 @Configuration
 public class config {
 
-
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

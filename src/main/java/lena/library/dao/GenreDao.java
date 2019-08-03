@@ -7,11 +7,21 @@ import org.springframework.dao.DataAccessException;
 import java.util.List;
 
 public interface GenreDao {
-    int insert(Genre genre);
-    void update(Genre genre);
-    Genre getById(int n) throws DataAccessException;
+    Genre insert(Genre genre);
+
+    Genre update(Genre genre);
+
+    Genre getById(int id) throws DataAccessException;
+
     Genre getByName(String name) throws DataAccessException;
-    List<Genre> getAllGenre();
-    void deleteById(int id);
-    void deleteByName(String name);
+
+    List<Genre> getAllGenres();
+
+    Boolean deleteById(int id);
+
+    Boolean deleteByName(String name);
+
+    Boolean deleteAll();
+
+    void createNewBase();
 }

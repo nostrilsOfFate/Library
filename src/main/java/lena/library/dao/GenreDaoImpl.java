@@ -1,8 +1,10 @@
 package lena.library.dao;
 
+import lena.library.model.Author;
 import lena.library.model.Genre;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -12,54 +14,72 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
-@Component
+@Repository
 public class GenreDaoImpl implements GenreDao {
 
-    protected final Log logger = LogFactory.getLog(GenreDaoImpl.class);
+        protected final Log logger = LogFactory.getLog(lena.library.dao.GenreDaoImpl.class);
+        @Mock
+        private DataSource dataSource;
+        @Mock
+        private JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+        @Autowired
+        public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+            this.jdbcTemplate = new JdbcTemplate(dataSource);
+        }
 
 
     @Override
-    public int insert(Genre genre) {
+    public Genre insert(Genre genre) throws DataAccessException  { //ставка
+
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into data_genre.genres (name) values(?)", new String[]{"id"});
+                PreparedStatement ps = connection.prepareStatement("insert into test.genres (name) values(?)", new String[]{"id"});
                 ps.setString(1, genre.getName());
                 return ps;
             }
         };
         KeyHolder holder = new GeneratedKeyHolder();
         jdbcTemplate.update(preparedStatementCreator, holder);
-        return holder.getKey().intValue();
+        genre.setId(holder.getKey().intValue());
+        return genre;
     }
 
     @Override
-    public void update(Genre genre) {
-        Object[] objects = new Object[] {
-                genre.getName(),
-                genre.getId()
-        };
-        jdbcTemplate.update("UPDATE  data_genre.genres  SET name=? where id=?", objects);
+    public Genre update(Genre genre) { //обновление текущего пользователя
+        int i;
+        try {
+            Object[] objects = new Object[]{
+                    genre.getName(),
+                    genre.getId(),
+            };
+            i = jdbcTemplate.update("UPDATE  test.genres SET name = ? where id = ?", objects);
+        } catch (DataAccessException e) {
+            i=0;
+        }
+        return (i!=0) ? genre : null;
     }
 
     @Override
     public Genre getById(int id) throws DataAccessException {
+        Object[] objects = new Object[]{id};
         Genre genre = null;
         try {
-            genre = jdbcTemplate.queryForObject("select * from data_genre.genres where id = :id", new Object[]{id}, new RowMapper<Genre>() {
+            genre = jdbcTemplate.queryForObject("select * from test.genres where id = ?", objects, new RowMapper<Genre>() {
                 public Genre mapRow(ResultSet rs, int arg) throws SQLException {
-                    Genre genre = new Genre();
-                    genre.setId(rs.getInt("id"));
-                    genre.setName(rs.getString("name"));
-                    return genre;
+                    Genre genre1 = new Genre();
+                    genre1.setId(rs.getInt("id"));
+                    genre1.setName(rs.getString("name"));
+                    return genre1;
                 }
             });
         } catch (EmptyResultDataAccessException e) {
@@ -73,12 +93,12 @@ public class GenreDaoImpl implements GenreDao {
         Object[] objects = new Object[]{name};
         Genre genre = null;
         try {
-            genre = jdbcTemplate.queryForObject("select * from data_genre.genres where name = :name", objects, new RowMapper<Genre>() {
-                public Genre mapRow(ResultSet rs, int arg) throws SQLException {
-                    Genre genre = new Genre();
-                    genre.setId(rs.getInt("id"));
-                    genre.setName(rs.getString("name"));
-                    return genre;
+            genre = jdbcTemplate.queryForObject("select * from test.genres where name = ?", objects, new RowMapper<Genre>() {
+                public Genre mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Genre genre1 = new Genre();
+                    genre1.setId(rs.getInt("id"));
+                    genre1.setName(rs.getString("name"));
+                    return genre1;
                 }
             });
         } catch (EmptyResultDataAccessException e) {
@@ -88,78 +108,38 @@ public class GenreDaoImpl implements GenreDao {
     }
 
     @Override
-    public List<Genre> getAllGenre() {
-        return jdbcTemplate.query("SELECT * FROM data_genre.genres", new RowMapper<Genre>() {
+    public List<Genre> getAllGenres() {
+        return jdbcTemplate.query("SELECT * FROM test.genres", new RowMapper<Genre>() {
             public Genre mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Genre genre = new Genre();
-                genre.setId(rs.getInt("id"));
-                genre.setName(rs.getString("name"));
-                return genre;
+                Genre genre1 = new Genre();
+                genre1.setId(rs.getInt("id"));
+                genre1.setName(rs.getString("name"));
+                return genre1;
             }
         });
     }
 
     @Override
-    public void deleteById(int id) {
-
-        jdbcTemplate.update("delete * from data_genre.genres where id = :id", id);
+    public Boolean deleteById(int id) {
+        jdbcTemplate.update("delete from test.genres where id = ?", id);
     }
 
     @Override
-    public void deleteByName(String name) {
-        jdbcTemplate.update("delete * from data_genre.genres where name = :name", name);
+    public Boolean deleteByName(String name) {
+        jdbcTemplate.update("delete from test.genres where name = ?", name);
     }
-//
-//    private final NamedParameterJdbcOperations namedParameterJdbcOperations;
-//
-//    public GenreDaoImpl(NamedParameterJdbcOperations namedParameterJdbcOperations) {
-//        this.namedParameterJdbcOperations = namedParameterJdbcOperations;
-//    }
-//
-//    @Override
-//    public int insert(Genre genre) {
-//        if (genre.isNew()) {
-//            return namedParameterJdbcOperations.getJdbcOperations().update("insert into data_genre.genre (name) values(?)", genre.getName());
-//        } else {
-//            return namedParameterJdbcOperations.getJdbcOperations().update("update data_genre.genre set name=? where id=?", genre.getName(), genre.getId());
-//        }
-//    }
-//
-//    @Override
-//    public Genre getById(int id) throws DataAccessException {
-//        Map<String, Integer> params = Collections.singletonMap("id", id);
-//        return namedParameterJdbcOperations.queryForObject("select * from data_genre.genre where id = :id", params, new GenreDaoImpl.GenreMapper());
-//    }
-//
-//    @Override
-//    public Genre getByName(String name) throws DataAccessException {
-//        Map<String, String> params = Collections.singletonMap("name", name);
-//        return namedParameterJdbcOperations.queryForObject("select * from data_genre.genre where name = :name", params, new GenreDaoImpl.GenreMapper());
-//    }
-//
-//    @Override
-//    public List<Genre> getAllGenre() {
-//        return namedParameterJdbcOperations.query("select * from data_genre.genre", new GenreDaoImpl.GenreMapper());
-//    }
-//
-//    @Override
-//    public int deleteById(int id) {
-//        Map<String, Integer> params = Collections.singletonMap("name", id);
-//        return namedParameterJdbcOperations.update("delete * from data_genre.genre where name = :name", params);
-//    }
-//
-//    @Override
-//    public int deleteByName(String name) {
-//        Map<String, String> params = Collections.singletonMap("name", name);
-//        return namedParameterJdbcOperations.update("DELETE * from data_genre.genre where name = :name", params);
-//    }
-//
-//    private static class GenreMapper implements RowMapper<Genre> {
-//        @Override
-//        public Genre mapRow(ResultSet resultSet, int i) throws SQLException {
-//            int id = resultSet.getInt("id");
-//            String name = resultSet.getString("name");
-//            return new Genre(id, name);
-//        }
-//    }
-}
+
+
+
+    public Boolean deleteAll() {
+            jdbcTemplate.execute("delete from test.genres;");
+        }
+
+        public void createNewBase() {
+            jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS test.genre (\n" +
+                    "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
+                    "  name VARCHAR(50) NOT NULL,\n" +
+                    "  PRIMARY KEY (id)\n" +
+                    ");");
+        }
+    }

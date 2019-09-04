@@ -23,8 +23,8 @@ public class AuthorDaoImpl implements AuthorDao {
     //TODO 1) ДОбавить ко всем методам логи (см пример BookDaoImpl) - НЕ СДЕЛАНО
     //TODO 2) Удалить getter, setter, equals hash code. toString и тд - посмотреть на Data в инете(документация!!!) - готово
     //TODO 3) УДАЛИТЬ ВЕСЬ ЗАКОМЕНЧЕННЫЙ КОД!!! - почти все, кроме классов что еще не сделаны
-    //TODO 4) Лить все в гит ( комитить чаще!!)
-    //TODO 5) Вынести конфигурацию в java класс либо удалить java классы конфига
+    //TODO 4) Лить все в гит ( комитить чаще!!) - оке
+    //TODO 5) Вынести конфигурацию в java класс либо удалить java классы конфига - ...
     //TODO 6) Переделать методы удаления - и тесты удаления
     //TODO 7) Удалить main - он нафиг не нужен
     //TODO 8) ПЕределать интерфейсы в сервис классах
@@ -42,8 +42,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
 
     @Override
-    public Author insert(Author author) throws DataAccessException  { //ставка
-
+    public Author insert(Author author) throws DataAccessException { //ставка
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement("insert into test.authors (name) values(?)", new String[]{"id"});
@@ -56,7 +55,7 @@ public class AuthorDaoImpl implements AuthorDao {
         try {
             author.setId(holder.getKey().intValue());
         } catch (InvalidDataAccessApiUsageException e) {
-           log.info("Invalid value of key");
+            log.info("Invalid value of key");
         }
         return author;
     }
@@ -67,13 +66,13 @@ public class AuthorDaoImpl implements AuthorDao {
         try {
             Object[] objects = new Object[]{
                     author.getName(),
-                    author.getId(),  };
+                    author.getId(),};
             i = jdbcTemplate.update("UPDATE  test.authors SET name = ? where id = ?", objects);
         } catch (DataAccessException e) {
-            i=0;
+            i = 0;
             log.info("Empty result in updating");
         }
-        return (i!=0) ? author : null;
+        return (i != 0) ? author : null;
     }
 
     @Override
@@ -81,13 +80,11 @@ public class AuthorDaoImpl implements AuthorDao {
         Object[] objects = new Object[]{id};
         Author author = null;
         try {
-            author = jdbcTemplate.queryForObject("select * from test.authors where id = ?", objects, new RowMapper<Author>() {
-                public Author mapRow(ResultSet rs, int arg) throws SQLException {
-                    Author author = new Author();
-                    author.setId(rs.getInt("id"));
-                    author.setName(rs.getString("name"));
-                    return author;
-                }
+            author = jdbcTemplate.queryForObject("select * from test.authors where id= ?", objects, (rs, arg) -> {
+                Author author1 = new Author();
+                author1.setId(rs.getInt("id"));
+                author1.setName(rs.getString("name"));
+                return author1;
             });
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by id");
@@ -100,13 +97,11 @@ public class AuthorDaoImpl implements AuthorDao {
         Object[] objects = new Object[]{name};
         Author author = null;
         try {
-            author = jdbcTemplate.queryForObject("select * from test.authors where name = ?", objects, new RowMapper<Author>() {
-                public Author mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    Author author = new Author();
-                    author.setId(rs.getInt("id"));
-                    author.setName(rs.getString("name"));
-                    return author;
-                }
+            author = jdbcTemplate.queryForObject("select * from test.authors where name = ?", objects, (rs, rowNum) -> {
+                Author author1 = new Author();
+                author1.setId(rs.getInt("id"));
+                author1.setName(rs.getString("name"));
+                return author1;
             });
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by name");
@@ -116,24 +111,22 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public List<Author> getAllAuthors() {
-        return jdbcTemplate.query("SELECT * FROM test.authors", new RowMapper<Author>() {
-            public Author mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Author author = new Author();
-                author.setId(rs.getInt("id"));
-                author.setName(rs.getString("name"));
-                return author;
-            }
+        return jdbcTemplate.query("SELECT * FROM test.authors", (rs, rowNum) -> {
+            Author author = new Author();
+            author.setId(rs.getInt("id"));
+            author.setName(rs.getString("name"));
+            return author;
         });
     }
 
     @Override
-    public void deleteById(int id) throws DataAccessException {
-            jdbcTemplate.update("delete from test.authors where id = ?", id);
+    public Boolean deleteById(int id) throws DataAccessException {
+        return jdbcTemplate.update("delete from test.authors where id = ?", id) != 0;
     }
 
     @Override
-    public void deleteByName(String name) throws DataAccessException {
-            jdbcTemplate.update("delete from test.authors where name = ?", name);
+    public Boolean deleteByName(String name) throws DataAccessException {
+        return jdbcTemplate.update("delete from test.authors where name = ?", name) != 0;
     }
 
     public void deleteAll() {
@@ -141,18 +134,6 @@ public class AuthorDaoImpl implements AuthorDao {
             jdbcTemplate.execute("delete from test.authors;");
         } catch (DataAccessException e) {
             log.info("Empty result in all deleting");
-        }
-    }
-
-    public void createNewBase() {
-        try {
-            jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS test.authors (\n" +
-                    "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
-                    "  name VARCHAR(50) NOT NULL,\n" +
-                    "  PRIMARY KEY (id)\n" +
-                    ");");
-        } catch (DataAccessException e) {
-            log.info("Empty result in creating new base");
         }
     }
 }

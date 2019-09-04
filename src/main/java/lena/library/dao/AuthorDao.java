@@ -22,7 +22,6 @@ public interface AuthorDao {
 
     Boolean deleteByName(String name);
 
-    Boolean deleteAll();
+    void deleteAll();
 
-    void createNewBase();
 }

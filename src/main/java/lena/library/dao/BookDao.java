@@ -25,7 +25,5 @@ public interface BookDao { //главная сущность, может в ра
 
     Boolean deleteByName(String name);
 
-    Boolean deleteAll();
-
-    void createNewBase();
+    void deleteAll();
 }

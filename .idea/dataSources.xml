@@ -13,6 +13,7 @@
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
+        <property name="allowPublicKeyRetrieval" value="true" />
       </driver-properties>
     </data-source>
     <data-source source="LOCAL" name="test@localhost" uuid="bbdb1506-25b8-41dd-8800-99dab6d20e89">
@@ -27,6 +28,7 @@
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
+        <property name="allowPublicKeyRetrieval" value="true" />
       </driver-properties>
     </data-source>
   </component>

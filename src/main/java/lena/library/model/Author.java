@@ -1,5 +1,6 @@
 package lena.library.model;
 
+import lena.library.dto.AuthorDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -40,4 +41,5 @@ public class Author {
     public boolean isNew() {
         return this.id == null;
     }
+
 }

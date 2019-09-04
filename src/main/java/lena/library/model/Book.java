@@ -38,14 +38,14 @@ public class Book {
     }
 
     public Book(Book book) {
-        this(book.getId(), book.getName(), book.getDescription(), book.getWrittenYear(), book.isReaded());
+        this(book.getId(), book.getName(), book.getWrittenYear(), book.getDescription(), book.isReaded());
     }
 
-    public Book(Integer id, String name, String description, Integer writtenYear, boolean readed) {
+    public Book(Integer id, String name, Integer writtenYear, String description, boolean readed) {
         this.id = id;
         this.name = name;
-        this.description = description;
         this.writtenYear = writtenYear;
+        this.description = description;
         this.readed = readed;
     }
 

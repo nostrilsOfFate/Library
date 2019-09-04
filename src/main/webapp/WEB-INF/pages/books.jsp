@@ -8,12 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Books</title>
 </head>
 <body>
 
 Hello Lena! It's me, your first jsp page!
-<a href="/edit">edit page</a>
-<%--//<%@ include file="WEB-INF/pages/editPage.jsp" ${book} /editPage.jsp --%>
+<a href="/edit">Authors</a>
+
+
+<h3>Библиотека книг в одном приложении</h3>
+
 </body>
 </html>

@@ -16,4 +16,17 @@
           class="lena.library.dao.AuthorDaoImpl">
         <property name="dataSource"  ref="dataSource" />
     </bean>
+
+    <bean id="jdbcTemplateGenreDaoTest" class="lena.library.dao.GenreDaoImpl">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
+    <bean id="jdbcTemplateBookDaoTest" class="lena.library.dao.BookDaoImpl">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
+    <!--<bean id="authorServiceImpl"-->
+    <!--class="lena.library.service.AuthorServiceImpl">-->
+    <!--</bean>-->
+
 </beans>

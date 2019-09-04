@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
+
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +36,9 @@ public class BookDaoImpl implements BookDao {
     public Book insert(Book book) {
 
         PreparedStatementCreator preparedStatementCreator = connection -> {
-            PreparedStatement ps = connection.prepareStatement("insert into test.book (name,description,writtenYear) values(?,?,?)", new String[]{book.getName(), book.getDescription(), book.getWrittenYear().toString()});
+            PreparedStatement ps = connection.prepareStatement(
+                    "insert into library.books (name,description,writtenYear) values(?,?,?)",
+                    new String[]{book.getName(), book.getDescription(), book.getWrittenYear().toString()});
             ps.setString(1, book.getName());
             ps.setString(2, book.getDescription());
             ps.setInt(3, book.getWrittenYear());
@@ -53,9 +56,13 @@ public class BookDaoImpl implements BookDao {
         int i;
         try {
             Object[] objects = new Object[]{
-                    book.getId(),
+                    book.getName(),
+                    book.getWrittenYear(),
+                    book.getDescription(),
+                    book.getId()
             };
-            i = jdbcTemplate.update("UPDATE  test.books  SET ( id, name, description, writtenYear) values(?,?,?,?) where id=: id", objects);
+            i = jdbcTemplate.update("UPDATE test.books SET name=?, writtenYear=?, description=?,  where id=?)",
+                    objects);
         } catch (DataAccessException e) {
             i = 0;
         }
@@ -68,13 +75,12 @@ public class BookDaoImpl implements BookDao {
         Object[] objects = new Object[]{id};
         Book book = null;
         try {
-            book = jdbcTemplate.queryForObject("select from test.books where id = ?", objects, (rs, arg) -> setFields(rs));
+            book = jdbcTemplate.queryForObject("select * from test.books where id = ?", objects, (rs, arg) -> setFields(rs));
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by id");
         }
         return book;
     }
-
 
     @Override
     public List<Book> getByName(String name) throws DataAccessException {
@@ -82,11 +88,7 @@ public class BookDaoImpl implements BookDao {
         Object[] objects = new Object[]{name};
         List<Book> books = null;
         try {
-            books = jdbcTemplate.query("select * from test.books where name = ?", objects, new RowMapper<Book>() {
-                public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    return setFields(rs);
-                }
-            });
+            books = jdbcTemplate.query("select * from test.books where name = ?", objects, (rs, rowNum) -> setFields(rs));
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by name");
         }
@@ -95,36 +97,28 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<Book> getAllBooks() {
-        return jdbcTemplate.query("SELECT * FROM test.books", new RowMapper<Book>() {
-            public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
-                return setFields(rs);
-            }
-        });
+        return jdbcTemplate.query("SELECT * FROM test.books", (rs, rowNum) -> setFields(rs));
     }
 
     @Override
-    public void deleteById(int id) {
-        jdbcTemplate.update("delete from test.books where id = ?", id);
+    public Boolean deleteById(int id) {
+        return jdbcTemplate.update("delete from test.books where id = ?", id) != 0;
     }
 
     @Override
-    public void deleteByName(String name) {
-        jdbcTemplate.update("delete from test.books where name = ?", name);
+    public Boolean deleteByName(String name) {
+        return jdbcTemplate.update("delete from test.books where name = ?", name) != 0;
     }
 
     @Override
     public void deleteAll() {
-        jdbcTemplate.execute("delete from test.books;");
+        try {
+            jdbcTemplate.execute("delete from test.books;");
+        } catch (DataAccessException e) {
+            log.info("Empty result in all deleting");
+        }
     }
 
-    @Override
-    public void createNewBase() {
-        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS test.books (\n" +
-                "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
-                "  name VARCHAR(50) NOT NULL,\n" +
-                "  PRIMARY KEY (id)\n" +
-                ");");
-    }
 
     private Book setFields(ResultSet rs) throws SQLException {
         Book book1 = new Book();

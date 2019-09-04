@@ -1,19 +1,17 @@
 package lena.library.dao;
 
-import lena.library.model.Author;
 import lena.library.model.Genre;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -22,13 +20,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
+@Slf4j
 @Repository
 public class GenreDaoImpl implements GenreDao {
 
-        protected final Log logger = LogFactory.getLog(lena.library.dao.GenreDaoImpl.class);
-        @Mock
+
         private DataSource dataSource;
-        @Mock
+
         private JdbcTemplate jdbcTemplate;
 
         @Autowired
@@ -40,7 +39,6 @@ public class GenreDaoImpl implements GenreDao {
 
     @Override
     public Genre insert(Genre genre) throws DataAccessException  { //ставка
-
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement("insert into test.genres (name) values(?)", new String[]{"id"});
@@ -50,7 +48,11 @@ public class GenreDaoImpl implements GenreDao {
         };
         KeyHolder holder = new GeneratedKeyHolder();
         jdbcTemplate.update(preparedStatementCreator, holder);
-        genre.setId(holder.getKey().intValue());
+        try {
+            genre.setId(holder.getKey().intValue());
+        } catch (InvalidDataAccessApiUsageException e) {
+            log.info("Invalid value of key");
+        }
         return genre;
     }
 
@@ -83,7 +85,7 @@ public class GenreDaoImpl implements GenreDao {
                 }
             });
         } catch (EmptyResultDataAccessException e) {
-            logger.info("Empty result in getting by id");
+            log.info("Empty result in getting by id");
         }
         return genre;
     }
@@ -102,7 +104,7 @@ public class GenreDaoImpl implements GenreDao {
                 }
             });
         } catch (EmptyResultDataAccessException e) {
-            logger.info("Empty result in getting by name");
+            log.info("Empty result in getting by name");
         }
         return genre;
     }
@@ -120,26 +122,21 @@ public class GenreDaoImpl implements GenreDao {
     }
 
     @Override
-    public Boolean deleteById(int id) {
-        jdbcTemplate.update("delete from test.genres where id = ?", id);
+    public Boolean deleteById(int id)  throws DataAccessException {
+        return jdbcTemplate.update("delete from test.genres where id = ?", id)!=0;
     }
 
     @Override
-    public Boolean deleteByName(String name) {
-        jdbcTemplate.update("delete from test.genres where name = ?", name);
+    public Boolean deleteByName(String name)  throws DataAccessException {
+            return jdbcTemplate.update("delete from test.genres where name = ?", name)!=0;
     }
 
-
-
-    public Boolean deleteAll() {
+    public void deleteAll() {
+        try {
             jdbcTemplate.execute("delete from test.genres;");
+        } catch (DataAccessException e) {
+            log.info("Empty result in all deleting");
         }
+    }
 
-        public void createNewBase() {
-            jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS test.genre (\n" +
-                    "  id   INTEGER     NOT NULL AUTO_INCREMENT,\n" +
-                    "  name VARCHAR(50) NOT NULL,\n" +
-                    "  PRIMARY KEY (id)\n" +
-                    ");");
-        }
     }

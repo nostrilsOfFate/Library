@@ -1,4 +1,4 @@
-package lena.library.Config;
+package lena.library.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

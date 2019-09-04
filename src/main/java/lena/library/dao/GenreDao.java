@@ -21,7 +21,6 @@ public interface GenreDao {
 
     Boolean deleteByName(String name);
 
-    Boolean deleteAll();
+    void deleteAll();
 
-    void createNewBase();
 }

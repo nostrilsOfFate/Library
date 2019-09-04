@@ -1,4 +1,4 @@
-package lena.library.Config;
+package lena.library.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 // Можно также реализовать, например, интерфейс WebMvcConfigurer, у которого есть целая куча методов..
 @ComponentScan(basePackages =  "lena.library") //сообщает Spring где искать компоненты, которыми он
 // должен управлять, т.е. классы, помеченные аннотацией @Component или ее производными,
-// такими как @Controller, @Repository, @Service. Эти аннотации автоматически определяют бин класса.
+// такими как @controller, @Repository, @service. Эти аннотации автоматически определяют бин класса.
 public class WebConfig {
 
     @Bean

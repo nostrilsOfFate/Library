@@ -1,4 +1,4 @@
-package lena.library.Service;
+package lena.library.service;
 
 import lena.library.model.Author;
 import lena.library.model.Book;
@@ -15,18 +15,17 @@ public interface BookService {
     //   private Set<Genre> genres;
     //   private Integer writtenYear;
 
-    Integer addBook(String nameOfBook, Integer writtenYear, String description, Set<Author> authors, Set<Genre> genres); //обновить книгу
+    Book addBook(String nameOfBook, Integer writtenYear, String description, Set<Author> authors, Set<Genre> genres); //обновить книгу
 
-    Integer updateBook(Integer id, String nameOfBook, Integer writtenYear, String description, Set<Author> authors, Set<Genre> genres);
+    Book updateBook(Integer id, String nameOfBook, Integer writtenYear, String description, Set<Author> authors, Set<Genre> genres);
 
-    Integer deleteBookById(int id);
+    Boolean deleteBookById(int id);
 
-    Integer deleteBookByName(String name);
+    Boolean deleteBookByName(String name);
 
     Book getBookById(int id);
 
-    List<Book> getBookByName(String name);
+    List<Book> getBooksByName(String name);
 
     List<Book> getAllBooks();
-
 }

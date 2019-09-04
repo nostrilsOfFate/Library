@@ -1,7 +1,5 @@
-package lena.library.Config;
+package lena.library.config;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;

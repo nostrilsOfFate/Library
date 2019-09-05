@@ -39,7 +39,7 @@ public class RoleDaoImpl implements RoleDao {
     public Role create(Role role) {
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into test.roles (name) values(?)", new String[]{"id"});
+                PreparedStatement ps = connection.prepareStatement("insert into library.roles (name) values(?)", new String[]{"id"});
                 ps.setString(1, role.getName());
                 return ps;
             }
@@ -59,7 +59,7 @@ public class RoleDaoImpl implements RoleDao {
         Object[] objects = new Object[]{name};
         Role role = null;
         try {
-            role = jdbcTemplate.queryForObject("select * from test.roles where name = ?", objects, (rs, rowNum) -> {
+            role = jdbcTemplate.queryForObject("select * from library.roles where name = ?", objects, (rs, rowNum) -> {
                 Role role1 = new Role();
                 role1.setId(rs.getString("id"));
                 role1.setName(rs.getString("name"));
@@ -80,7 +80,7 @@ public class RoleDaoImpl implements RoleDao {
             Object[] objects = new Object[]{name};
             List<Role> roles1 = new ArrayList<>();
             try {
-                roles1 = jdbcTemplate.query("select * from test.roles where name = ?", objects, (rs, rowNum) ->  {
+                roles1 = jdbcTemplate.query("select * from library.roles where name = ?", objects, (rs, rowNum) ->  {
                     Role role1 = new Role();
                     role1.setId(rs.getString("id"));
                     role1.setName(rs.getString("name"));
@@ -98,17 +98,17 @@ public class RoleDaoImpl implements RoleDao {
 
     @Override
     public Boolean deleteByName(String name) {
-        return jdbcTemplate.update("delete from test.roles where name = ?", name)!=0;
+        return jdbcTemplate.update("delete from library.roles where name = ?", name)!=0;
     }
 
     @Override
     public Boolean existsByName(String name) {
-       return jdbcTemplate.update("select from test.roles where name = ?", name) != 0;
+       return jdbcTemplate.update("select from library.roles where name = ?", name) != 0;
     }
 
     @Override
     public List<Role> getAllRoles() {
-        return jdbcTemplate.query("SELECT * FROM test.roles", new RowMapper<Role>() {
+        return jdbcTemplate.query("SELECT * FROM library.roles", new RowMapper<Role>() {
             public Role mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Role role1 = new Role();
                 role1.setId(rs.getString("id"));
@@ -121,7 +121,7 @@ public class RoleDaoImpl implements RoleDao {
     @Override
     public void deleteAll() {
         try {
-            jdbcTemplate.execute("delete from test.roles;");
+            jdbcTemplate.execute("delete from library.roles;");
         } catch (DataAccessException e) {
             log.info("Empty result in all deleting");
         }

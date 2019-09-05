@@ -19,7 +19,7 @@ public class main {
             System.out.println("----------------------");
 
             String sql;
-                sql = "SELECT * FROM data_genre.authors";
+                sql = "SELECT * FROM library.authors";
 
                 ResultSet resultSet = statement.executeQuery(sql);
                 System.out.println("Retrieving data from database...");

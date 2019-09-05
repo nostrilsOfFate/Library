@@ -5,12 +5,11 @@
       <ServerVersion>8.0.11</ServerVersion>
       <DefaultCasing>lower/lower</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="data_genre">
-      <Visible>1</Visible>
-    </schema>
+    <schema id="2" parent="1" name="data_genre"/>
     <schema id="3" parent="1" name="information_schema"/>
     <schema id="4" parent="1" name="library">
       <Current>1</Current>
+      <Visible>1</Visible>
     </schema>
     <schema id="5" parent="1" name="mysql"/>
     <schema id="6" parent="1" name="performance_schema"/>
@@ -18,11 +17,11 @@
     <schema id="8" parent="1" name="test">
       <Visible>1</Visible>
     </schema>
-    <table id="9" parent="2" name="authors"/>
-    <table id="10" parent="2" name="authors_books"/>
-    <table id="11" parent="2" name="books"/>
-    <table id="12" parent="2" name="genres"/>
-    <table id="13" parent="2" name="genres_books"/>
+    <table id="9" parent="4" name="authors"/>
+    <table id="10" parent="4" name="authors_books"/>
+    <table id="11" parent="4" name="books"/>
+    <table id="12" parent="4" name="genres"/>
+    <table id="13" parent="4" name="genres_books"/>
     <table id="14" parent="8" name="authors"/>
     <table id="15" parent="8" name="authors_books"/>
     <table id="16" parent="8" name="books"/>
@@ -77,14 +76,14 @@ book_id</ColNames>
     </key>
     <foreign-key id="29" parent="10" name="fk_author_id">
       <ColNames>author_id</ColNames>
-      <RefSchemaName>data_genre</RefSchemaName>
+      <RefSchemaName>library</RefSchemaName>
       <RefTableName>authors</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="30" parent="10" name="fk_book1_id">
       <ColNames>book_id</ColNames>
-      <RefSchemaName>data_genre</RefSchemaName>
+      <RefSchemaName>library</RefSchemaName>
       <RefTableName>books</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
@@ -174,14 +173,14 @@ book_id</ColNames>
     </key>
     <foreign-key id="47" parent="13" name="fk_genre_id">
       <ColNames>genre_id</ColNames>
-      <RefSchemaName>data_genre</RefSchemaName>
+      <RefSchemaName>library</RefSchemaName>
       <RefTableName>genres</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="48" parent="13" name="fk_book_id">
       <ColNames>book_id</ColNames>
-      <RefSchemaName>data_genre</RefSchemaName>
+      <RefSchemaName>library</RefSchemaName>
       <RefTableName>books</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>

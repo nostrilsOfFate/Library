@@ -41,7 +41,7 @@ public class GenreDaoImpl implements GenreDao {
     public Genre insert(Genre genre) throws DataAccessException  { //ставка
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into test.genres (name) values(?)", new String[]{"id"});
+                PreparedStatement ps = connection.prepareStatement("insert into library.genres (name) values(?)", new String[]{"id"});
                 ps.setString(1, genre.getName());
                 return ps;
             }
@@ -64,7 +64,7 @@ public class GenreDaoImpl implements GenreDao {
                     genre.getName(),
                     genre.getId(),
             };
-            i = jdbcTemplate.update("UPDATE  test.genres SET name = ? where id = ?", objects);
+            i = jdbcTemplate.update("UPDATE  library.genres SET name = ? where id = ?", objects);
         } catch (DataAccessException e) {
             i=0;
         }
@@ -76,7 +76,7 @@ public class GenreDaoImpl implements GenreDao {
         Object[] objects = new Object[]{id};
         Genre genre = null;
         try {
-            genre = jdbcTemplate.queryForObject("select * from test.genres where id = ?", objects, new RowMapper<Genre>() {
+            genre = jdbcTemplate.queryForObject("select * from library.genres where id = ?", objects, new RowMapper<Genre>() {
                 public Genre mapRow(ResultSet rs, int arg) throws SQLException {
                     Genre genre1 = new Genre();
                     genre1.setId(rs.getInt("id"));
@@ -95,7 +95,7 @@ public class GenreDaoImpl implements GenreDao {
         Object[] objects = new Object[]{name};
         Genre genre = null;
         try {
-            genre = jdbcTemplate.queryForObject("select * from test.genres where name = ?", objects, new RowMapper<Genre>() {
+            genre = jdbcTemplate.queryForObject("select * from library.genres where name = ?", objects, new RowMapper<Genre>() {
                 public Genre mapRow(ResultSet rs, int rowNum) throws SQLException {
                     Genre genre1 = new Genre();
                     genre1.setId(rs.getInt("id"));
@@ -111,7 +111,7 @@ public class GenreDaoImpl implements GenreDao {
 
     @Override
     public List<Genre> getAllGenres() {
-        return jdbcTemplate.query("SELECT * FROM test.genres", new RowMapper<Genre>() {
+        return jdbcTemplate.query("SELECT * FROM library.genres", new RowMapper<Genre>() {
             public Genre mapRow(ResultSet rs, int rowNum) throws SQLException {
                 Genre genre1 = new Genre();
                 genre1.setId(rs.getInt("id"));
@@ -123,17 +123,17 @@ public class GenreDaoImpl implements GenreDao {
 
     @Override
     public Boolean deleteById(int id)  throws DataAccessException {
-        return jdbcTemplate.update("delete from test.genres where id = ?", id)!=0;
+        return jdbcTemplate.update("delete from library.genres where id = ?", id)!=0;
     }
 
     @Override
     public Boolean deleteByName(String name)  throws DataAccessException {
-            return jdbcTemplate.update("delete from test.genres where name = ?", name)!=0;
+            return jdbcTemplate.update("delete from library.genres where name = ?", name)!=0;
     }
 
     public void deleteAll() {
         try {
-            jdbcTemplate.execute("delete from test.genres;");
+            jdbcTemplate.execute("delete from library.genres;");
         } catch (DataAccessException e) {
             log.info("Empty result in all deleting");
         }

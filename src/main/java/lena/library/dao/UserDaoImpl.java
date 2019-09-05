@@ -26,7 +26,6 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -39,7 +38,7 @@ public class UserDaoImpl implements UserDao {
     public User create(User user) {
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into test.users (name) values(?,?,?,?,?,?,?,?)",
+                PreparedStatement ps = connection.prepareStatement("insert into library.users (name) values(?,?,?,?,?,?,?,?)",
                         new String[]{"id","firstName" ,"lastName" ,"email","password", "enabled","lastLogin"});
                 ps.setInt(1, user.getId());
                 ps.setString(2, user.getFirstName());
@@ -62,13 +61,12 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
-    //ВЫНЕСТИ  В МЕТОД
     @Override
     public User findByEmail(String email) {
         Object[] objects = new Object[]{email};
         User user = null;
         try {
-            user = jdbcTemplate.queryForObject("select * from test.users where email = ?",
+            user = jdbcTemplate.queryForObject("select * from library.users where email = ?",
                     objects, (rs, rowNum) -> fillUser(rs));
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by name");
@@ -81,7 +79,7 @@ public class UserDaoImpl implements UserDao {
         Object[] objects = new Object[]{userId};
         User user = null;
         try {
-            user = jdbcTemplate.queryForObject("select * from test.users where id = ?",
+            user = jdbcTemplate.queryForObject("select * from library.users where id = ?",
                     objects, (rs, rowNum) -> fillUser(rs));
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result of user in getting by id");
@@ -91,17 +89,17 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean existsById(String userId) {
-        return jdbcTemplate.update("select from test.users where id = ?", userId) != 0;
+        return jdbcTemplate.update("select from library.users where id = ?", userId) != 0;
     }
 
     @Override
     public boolean existsByEmail(String email) {
-        return jdbcTemplate.update("select from test.users where email = ?", email) != 0;
+        return jdbcTemplate.update("select from library.users where email = ?", email) != 0;
     }
 
     @Override
     public List<User> findAllByIdIn(List<String> ids) {
-        return jdbcTemplate.query("SELECT * FROM test.users", new RowMapper<User>() {
+        return jdbcTemplate.query("SELECT * FROM library.users", new RowMapper<User>() {
             public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return fillUser(rs);
             }
@@ -111,7 +109,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void deleteAll() {
         try {
-            jdbcTemplate.execute("delete from test.users;");
+            jdbcTemplate.execute("delete from library.users;");
         } catch (DataAccessException e) {
             log.info("Empty result in all deleting");
         }
@@ -119,18 +117,18 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Boolean deleteById(Integer id) {
-        return jdbcTemplate.update("delete from test.users where id = ?", id)!=0;
+        return jdbcTemplate.update("delete from library.users where id = ?", id)!=0;
     }
 
     @Override
     public Boolean deleteByName(String name) {
-        return jdbcTemplate.update("delete from test.users where name = ?", name)!=0;
+        return jdbcTemplate.update("delete from library.users where name = ?", name)!=0;
     }
 
 
     @Override
     public List<User> getAllUsers() {
-        return jdbcTemplate.query("SELECT * FROM test.users", new RowMapper<User>() {
+        return jdbcTemplate.query("SELECT * FROM library.users", new RowMapper<User>() {
             public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return fillUser(rs);
             }

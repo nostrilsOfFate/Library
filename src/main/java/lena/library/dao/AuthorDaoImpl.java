@@ -45,7 +45,7 @@ public class AuthorDaoImpl implements AuthorDao {
     public Author insert(Author author) throws DataAccessException { //ставка
         PreparedStatementCreator preparedStatementCreator = new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into test.authors (name) values(?)", new String[]{"id"});
+                PreparedStatement ps = connection.prepareStatement("insert into library.authors (name) values(?)", new String[]{"id"});
                 ps.setString(1, author.getName());
                 return ps;
             }
@@ -67,7 +67,7 @@ public class AuthorDaoImpl implements AuthorDao {
             Object[] objects = new Object[]{
                     author.getName(),
                     author.getId(),};
-            i = jdbcTemplate.update("UPDATE  test.authors SET name = ? where id = ?", objects);
+            i = jdbcTemplate.update("UPDATE  library.authors SET name = ? where id = ?", objects);
         } catch (DataAccessException e) {
             i = 0;
             log.info("Empty result in updating");
@@ -80,7 +80,7 @@ public class AuthorDaoImpl implements AuthorDao {
         Object[] objects = new Object[]{id};
         Author author = null;
         try {
-            author = jdbcTemplate.queryForObject("select * from test.authors where id= ?", objects, (rs, arg) -> {
+            author = jdbcTemplate.queryForObject("select * from library.authors where id= ?", objects, (rs, arg) -> {
                 Author author1 = new Author();
                 author1.setId(rs.getInt("id"));
                 author1.setName(rs.getString("name"));
@@ -97,7 +97,7 @@ public class AuthorDaoImpl implements AuthorDao {
         Object[] objects = new Object[]{name};
         Author author = null;
         try {
-            author = jdbcTemplate.queryForObject("select * from test.authors where name = ?", objects, (rs, rowNum) -> {
+            author = jdbcTemplate.queryForObject("select * from library.authors where name = ?", objects, (rs, rowNum) -> {
                 Author author1 = new Author();
                 author1.setId(rs.getInt("id"));
                 author1.setName(rs.getString("name"));
@@ -111,7 +111,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public List<Author> getAllAuthors() {
-        return jdbcTemplate.query("SELECT * FROM test.authors", (rs, rowNum) -> {
+        return jdbcTemplate.query("SELECT * FROM library.authors", (rs, rowNum) -> {
             Author author = new Author();
             author.setId(rs.getInt("id"));
             author.setName(rs.getString("name"));
@@ -121,17 +121,17 @@ public class AuthorDaoImpl implements AuthorDao {
 
     @Override
     public Boolean deleteById(int id) throws DataAccessException {
-        return jdbcTemplate.update("delete from test.authors where id = ?", id) != 0;
+        return jdbcTemplate.update("delete from library.authors where id = ?", id) != 0;
     }
 
     @Override
     public Boolean deleteByName(String name) throws DataAccessException {
-        return jdbcTemplate.update("delete from test.authors where name = ?", name) != 0;
+        return jdbcTemplate.update("delete from library.authors where name = ?", name) != 0;
     }
 
     public void deleteAll() {
         try {
-            jdbcTemplate.execute("delete from test.authors;");
+            jdbcTemplate.execute("delete from library.authors;");
         } catch (DataAccessException e) {
             log.info("Empty result in all deleting");
         }

@@ -61,7 +61,7 @@ public class BookDaoImpl implements BookDao {
                     book.getDescription(),
                     book.getId()
             };
-            i = jdbcTemplate.update("UPDATE test.books SET name=?, writtenYear=?, description=?,  where id=?)",
+            i = jdbcTemplate.update("UPDATE library.books SET name=?, writtenYear=?, description=?,  where id=?)",
                     objects);
         } catch (DataAccessException e) {
             i = 0;
@@ -75,7 +75,7 @@ public class BookDaoImpl implements BookDao {
         Object[] objects = new Object[]{id};
         Book book = null;
         try {
-            book = jdbcTemplate.queryForObject("select * from test.books where id = ?", objects, (rs, arg) -> setFields(rs));
+            book = jdbcTemplate.queryForObject("select * from library.books where id = ?", objects, (rs, arg) -> setFields(rs));
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by id");
         }
@@ -88,7 +88,7 @@ public class BookDaoImpl implements BookDao {
         Object[] objects = new Object[]{name};
         List<Book> books = null;
         try {
-            books = jdbcTemplate.query("select * from test.books where name = ?", objects, (rs, rowNum) -> setFields(rs));
+            books = jdbcTemplate.query("select * from library.books where name = ?", objects, (rs, rowNum) -> setFields(rs));
         } catch (EmptyResultDataAccessException e) {
             log.info("Empty result in getting by name");
         }
@@ -97,23 +97,23 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<Book> getAllBooks() {
-        return jdbcTemplate.query("SELECT * FROM test.books", (rs, rowNum) -> setFields(rs));
+        return jdbcTemplate.query("SELECT * FROM library.books", (rs, rowNum) -> setFields(rs));
     }
 
     @Override
     public Boolean deleteById(int id) {
-        return jdbcTemplate.update("delete from test.books where id = ?", id) != 0;
+        return jdbcTemplate.update("delete from library.books where id = ?", id) != 0;
     }
 
     @Override
     public Boolean deleteByName(String name) {
-        return jdbcTemplate.update("delete from test.books where name = ?", name) != 0;
+        return jdbcTemplate.update("delete from library.books where name = ?", name) != 0;
     }
 
     @Override
     public void deleteAll() {
         try {
-            jdbcTemplate.execute("delete from test.books;");
+            jdbcTemplate.execute("delete from library.books;");
         } catch (DataAccessException e) {
             log.info("Empty result in all deleting");
         }

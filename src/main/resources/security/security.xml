@@ -1,35 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <beans:beans xmlns="http://www.springframework.org/schema/security"
-                 xmlns:beans="http://www.springframework.org/schema/beans"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://www.springframework.org/schema/beans
-                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-                 http://www.springframework.org/schema/security
-                 http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
+    <!--<beans:beans xmlns="http://www.springframework.org/schema/security"-->
+                 <!--xmlns:beans="http://www.springframework.org/schema/beans"-->
+                 <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+                 <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+                 <!--http://www.springframework.org/schema/beans/spring-beans-3.0.xsd-->
+                 <!--http://www.springframework.org/schema/security-->
+                 <!--http://www.springframework.org/schema/security/spring-security-3.0.xsd">-->
 
 
-        <http access-denied-page="/error403.jsp">
-            <intercept-url pattern="/index*" access="ROLE_USER,ROLE_ANONYMOUS"/>
-            <intercept-url pattern="/add*" access="ROLE_USER"/>
-            <intercept-url pattern="/delete/*" access="ROLE_ADMIN"/>
-            <form-login login-page="/login.jsp" default-target-url="/index" authentication-failure-url="/login.jsp?error=true"/>
-            <logout logout-url="/logout" logout-success-url="/index"/>
-            <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
-            <remember-me/>
-        </http>
+        <!--<http access-denied-page="/error403.jsp">-->
+            <!--<intercept-url pattern="/index*" access="ROLE_USER,ROLE_ANONYMOUS"/>-->
+            <!--<intercept-url pattern="/add*" access="ROLE_USER"/>-->
+            <!--<intercept-url pattern="/delete/*" access="ROLE_ADMIN"/>-->
+            <!--<form-login login-page="/login.jsp" default-target-url="/index" authentication-failure-url="/login.jsp?error=true"/>-->
+            <!--<logout logout-url="/logout" logout-success-url="/index"/>-->
+            <!--<anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>-->
+            <!--<remember-me/>-->
+        <!--</http>-->
 
-        <authentication-manager>
-            <authentication-provider>
-                <user-service>
-                    <user name="admin" password="pass" authorities="ROLE_ADMIN,ROLE_USER"/>
-                    <user name="user1" password="1111" authorities="ROLE_USER"/>
-                    <user name="user2" password="2222" disabled="true" authorities="ROLE_USER"/>
-                </user-service>
-            </authentication-provider>
-        </authentication-manager>
-    </beans:beans>
-</beans>
+        <!--<authentication-manager>-->
+            <!--<authentication-provider>-->
+                <!--<user-service>-->
+                    <!--<user name="admin" password="pass" authorities="ROLE_ADMIN,ROLE_USER"/>-->
+                    <!--<user name="user1" password="1111" authorities="ROLE_USER"/>-->
+                    <!--<user name="user2" password="2222" disabled="true" authorities="ROLE_USER"/>-->
+                <!--</user-service>-->
+            <!--</authentication-provider>-->
+        <!--</authentication-manager>-->
+    <!--</beans:beans>-->
+<!--</beans>-->
 
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans.xsd
+	         http://www.springframework.org/schema/security
+	         http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http pattern="/resources/**" security="none"/>
+    <http pattern="/webjars/**" security="none"/>
+
+    <http pattern="/rest/**" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
+        <http-basic/>
+        <intercept-url pattern="/rest/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <csrf disabled="true"/>
+    </http>
+
+    <beans:bean class="org.springframework.security.crypto.password.NoOpPasswordEncoder" id="passwordEncoder"
+                factory-method="getInstance">
+    </beans:bean>
+
+    <http auto-config='true'>
+         <!--возможный косяк в дубляже паттерна-->
+        <intercept-url pattern="/**" access="ROLE_USER" />
+
+
+        <intercept-url pattern="/login" access="isAnonymous()"/>
+        <intercept-url pattern="/register" access="isAnonymous()"/>
+
+        <intercept-url pattern="/**/admin/**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+
+        <form-login login-page="/login" default-target-url="/restaurants"
+                    authentication-failure-url="/login?error=true"
+                    login-processing-url="/spring_security_check"/>
+        <logout logout-success-url="/login"/>
+        <!--<csrf disabled="true"/>-->
+    </http>
+
+    <authentication-manager>
+        <!--ер сервис импл?-->
+        <authentication-provider user-service-ref="userService">
+            <password-encoder ref="passwordEncoder"/>
+            <!--<jdbc-user-service data-source-ref="dataSource"-->
+            <!--users-by-username-query="SELECT email, password, enabled FROM users WHERE email = ?"-->
+            <!--authorities-by-username-query="-->
+            <!--SELECT u.email, r.role FROM users u, user_roles r WHERE u.id = r.user_id AND u.email = ?"-->
+            <!--/>-->
+            <!--<user-service>-->
+            <!--<user name="user@yandex.ru" password="password" authorities="ROLE_USER"/>-->
+            <!--<user name="admin@gmail.com" password="admin" authorities="ROLE_ADMIN"/>-->
+            <!--</user-service>-->
+            <!---->
+
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>

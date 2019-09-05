@@ -4,10 +4,10 @@
 *.class
 target
 lib
-
+.idea
 # Log file
 *.log
-
+_library.iml
 # BlueJ files
 *.ctxt
 

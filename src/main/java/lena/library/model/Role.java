@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "data_genre.roles")
+@Table(name = "library.roles")
 public class Role {
 
     @Id

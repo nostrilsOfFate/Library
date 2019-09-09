@@ -8,12 +8,6 @@ import java.util.List;
 import java.util.Set;
 
 public interface BookService {
-    // private Integer id;
-    //   private String name;
-    //   private String description; // описание
-    //   private Set<Author> authors;
-    //   private Set<Genre> genres;
-    //   private Integer writtenYear;
 
     Book addBook(String nameOfBook, Integer writtenYear, String description, Set<Author> authors, Set<Genre> genres); //обновить книгу
 

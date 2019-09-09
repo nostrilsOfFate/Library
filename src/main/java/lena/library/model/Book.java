@@ -8,7 +8,7 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "data_genre.books")
+@Table(name = "library.books")
 public class Book {
 
     @Id
@@ -24,10 +24,10 @@ public class Book {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(mappedBy = "data_genre.authors_books")
+    @ManyToMany(mappedBy = "library.authors_books")
     private Set<Author> authors;
 
-    @ManyToMany(mappedBy = "data_genre.genres_books")
+    @ManyToMany(mappedBy = "library.genres_books")
     private Set<Genre> genres;
 
     @Column(name = "readed")

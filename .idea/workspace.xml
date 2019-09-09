@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="_library:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3c68d7d-8173-4dea-b40e-15e0e7fced38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lena/library/controller/AuthorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lena/library/controller/GenreController.java" afterDir="false" />
+    <list default="true" id="c4d5f4d3-a574-4875-af8c-197f9829ff44" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/326cf7ab-2d20-4df5-836e-aeaee02b90b8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/326cf7ab-2d20-4df5-836e-aeaee02b90b8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Controller/BookController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Service/AuthorService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Service/AuthorServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Service/BookServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Service/GenreService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Service/GenreServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/Service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/AuthorDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/AuthorDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/GenreDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/GenreDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/RoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/RoleDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/dao/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/dao/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/model/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/model/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/security/security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/security/security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/security/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/security/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/security/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/authorDaoConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/authorDaoConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/daoTest/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/daoTest/UserDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/serviceTest/BookServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/serviceTest/BookServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,14 +67,8 @@
   </component>
   <component name="ExecutionTargetDialog">
     <checked>
-      <node key="326cf7ab-2d20-4df5-836e-aeaee02b90b8">
-        <node key="library" />
-      </node>
-    </checked>
-    <expanded>
       <node key="326cf7ab-2d20-4df5-836e-aeaee02b90b8" />
-      <node key="bbdb1506-25b8-41dd-8800-99dab6d20e89" />
-    </expanded>
+    </checked>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1791749806">
@@ -112,35 +100,36 @@
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.67" value="1" />
           <entry key="project.open.time.68" value="1" />
+          <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.76" value="2" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.82" value="1" />
-          <entry key="project.opened" value="31" />
+          <entry key="project.opened" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="32" />
-          <entry key="gitignore" value="16" />
-          <entry key="java" value="23840" />
+          <entry key="gitignore" value="22" />
+          <entry key="java" value="24615" />
           <entry key="jsp" value="248" />
           <entry key="properties" value="132" />
           <entry key="sql" value="1094" />
-          <entry key="txt" value="262" />
-          <entry key="xml" value="608" />
+          <entry key="txt" value="271" />
+          <entry key="xml" value="610" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Git file" value="16" />
-          <entry key="JAVA" value="23840" />
+          <entry key="Git file" value="22" />
+          <entry key="JAVA" value="24615" />
           <entry key="JSP" value="248" />
-          <entry key="PLAIN_TEXT" value="294" />
+          <entry key="PLAIN_TEXT" value="303" />
           <entry key="Properties" value="132" />
           <entry key="SQL" value="999" />
           <entry key="Scratch" value="95" />
-          <entry key="XML" value="608" />
+          <entry key="XML" value="610" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -155,14 +144,14 @@
           <entry key="genre" value="1" />
           <entry key="genres" value="2" />
           <entry key="genres_books" value="1" />
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="4" />
           <entry key="html" value="6" />
           <entry key="iml" value="4" />
-          <entry key="java" value="690" />
+          <entry key="java" value="729" />
           <entry key="jsp" value="14" />
           <entry key="properties" value="18" />
-          <entry key="sql" value="43" />
-          <entry key="xml" value="88" />
+          <entry key="sql" value="44" />
+          <entry key="xml" value="94" />
           <entry key="xsd" value="1" />
         </counts>
       </usages-collector>
@@ -170,16 +159,16 @@
         <counts>
           <entry key="CLASS" value="30" />
           <entry key="Database Element" value="18" />
-          <entry key="Git file" value="3" />
+          <entry key="Git file" value="4" />
           <entry key="HTML" value="6" />
           <entry key="IDEA_MODULE" value="4" />
-          <entry key="JAVA" value="690" />
+          <entry key="JAVA" value="729" />
           <entry key="JSP" value="14" />
           <entry key="Manifest" value="1" />
           <entry key="Properties" value="18" />
-          <entry key="SQL" value="32" />
+          <entry key="SQL" value="33" />
           <entry key="Scratch" value="11" />
-          <entry key="XML" value="91" />
+          <entry key="XML" value="97" />
         </counts>
       </usages-collector>
     </session>
@@ -190,10 +179,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDaoImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="1683">
+              <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1819">
+              <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1445">
+              <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -202,22 +209,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/rest/UserRestController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/UserDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -225,171 +220,125 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/security/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/config/WebConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/BookServiceImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
+            <state relative-caret-position="1326">
+              <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/config/Initializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/config/config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/config/AppInitializer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/BookService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-context.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/BookServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/BookDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="78" lean-forward="true" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Jsp File" />
-        <option value="FxmlFile" />
-        <option value="Interface" />
-        <option value="spring-beans.schema" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>update</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/Config/migration/DatabaseChangelog.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/Config/migration/MongoConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/dto/UserRegistrationDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/dto/AuthorDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/validation/FieldMatch.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/registration.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/welcome.html" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/config/Initializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/repository/RoleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/Role.java" />
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/UserDaoImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/service/RoleService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/RoleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/validation/FieldMatchValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/security/SecurityConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/service/RoleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/exceptions/UserDoesNotExistsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/exceptions/RoleDoesntExistsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dto/UserDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/fill.sql" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dto/BookDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dto/Mapper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/testConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/rest/GenreRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/rest/AuthorRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/rest/BookRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/rest/UserRestController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/GenreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/BookController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/AuthorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/main.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/AuthorDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/GenreDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/RoleDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/security/security.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/lena/library/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/security/web.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/Author.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/Genre.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/security/SecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-context.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/authorDaoConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/security/security.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/daoTest/UserDaoImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/serviceTest/BookServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/service/BookService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -398,40 +347,15 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="library" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="library" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-19" />
+    <option name="x" value="-20" />
     <option name="y" value="190" />
     <option name="width" value="1915" />
     <option name="height" value="495" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Spring</id>
-          </State>
-          <State>
-            <id>Spring MVCSpring</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>SpringMVCViewInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -440,6 +364,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -469,7 +394,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -715,39 +639,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Lena/IdeaProjects/_library/src/main/java/lena/library/dao/AuthorDaoImpl.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567706962181" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
-    <property name="database.console.LAST_STATE" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/kenya_project/alfa-family" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567777363817" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/входное задание/template/space" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-    <property name="sql.rename.search.for.storage.occurrences" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Lena\IdeaProjects\_library\src\main\webapp\WEB-INF\pages" />
-      <recent name="C:\Users\Lena\IdeaProjects\_library\src\main\resources\spring" />
-      <recent name="C:\Users\Lena\IdeaProjects\_library\src\test\java\libraryTests" />
-      <recent name="C:\Users\Lena\IdeaProjects\_library\src\main\webapp\WEB_INF" />
-      <recent name="C:\Users\Lena\IdeaProjects\_library\src\main\webapp" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Lena\IdeaProjects\_library\src\test\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lena.library.controller" />
-      <recent name="lena.library.security" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="lena.library.service" />
-      <recent name="lena.library.Service" />
+      <recent name="C:\Users\Lena\IdeaProjects\_library\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -762,35 +664,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.main">
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lena.library.dao.main" />
-      <module name="_library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lena.library.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthorDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="_library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="daoTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="daoTest" />
-      <option name="MAIN_CLASS_NAME" value="daoTest.AuthorDaoImplTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceImplTest.updateBookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BookServiceImplTest">
+    <configuration name="BookServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="_library" />
       <extension name="coverage">
         <pattern>
@@ -800,13 +675,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="serviceTest" />
       <option name="MAIN_CLASS_NAME" value="serviceTest.BookServiceImplTest" />
-      <option name="METHOD_NAME" value="updateBookTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoleDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GenreServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="_library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="serviceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="serviceTest" />
+      <option name="MAIN_CLASS_NAME" value="serviceTest.GenreServiceImplTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleDaoImplTest.findByNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="_library" />
       <extension name="coverage">
         <pattern>
@@ -816,6 +703,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="daoTest" />
       <option name="MAIN_CLASS_NAME" value="daoTest.RoleDaoImplTest" />
+      <option name="METHOD_NAME" value="findByNameTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="_library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="daoTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="daoTest" />
+      <option name="MAIN_CLASS_NAME" value="daoTest.UserDaoImplTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -834,103 +737,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TomcatLibrary" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.43" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="11">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="_library:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed__library" />
-        <option name="HTTP_PORT" value="8081" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="49773" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="_library:war exploded" />
-        </option>
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Tomcat Server.TomcatLibrary" />
-      <item itemvalue="JUnit.BookServiceImplTest.updateBookTest" />
-      <item itemvalue="JUnit.AuthorDaoImplTest" />
-      <item itemvalue="JUnit.RoleDaoImplTest" />
+      <item itemvalue="JUnit.BookServiceImplTest" />
+      <item itemvalue="JUnit.GenreServiceImplTest" />
       <item itemvalue="JUnit.UserServiceImplTest" />
-      <item itemvalue="Application.main" />
+      <item itemvalue="JUnit.RoleDaoImplTest.findByNameTest" />
+      <item itemvalue="JUnit.UserDaoImplTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.BookServiceImplTest" />
+        <item itemvalue="JUnit.UserDaoImplTest" />
+        <item itemvalue="JUnit.RoleDaoImplTest.findByNameTest" />
         <item itemvalue="JUnit.UserServiceImplTest" />
-        <item itemvalue="JUnit.RoleDaoImplTest" />
-        <item itemvalue="JUnit.AuthorDaoImplTest" />
-        <item itemvalue="JUnit.BookServiceImplTest.updateBookTest" />
+        <item itemvalue="JUnit.GenreServiceImplTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration>C:\Users\Lena\AppData\Roaming\Subversion</configuration>
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d3c68d7d-8173-4dea-b40e-15e0e7fced38" name="Default Changelist" comment="" />
+      <changelist id="c4d5f4d3-a574-4875-af8c-197f9829ff44" name="Default Changelist" comment="" />
       <created>1562329671802</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -965,14 +794,15 @@
       <workItem from="1566931640613" duration="2206000" />
       <workItem from="1566985781097" duration="38304000" />
       <workItem from="1567492161401" duration="4945000" />
-      <workItem from="1567604365265" duration="14588000" />
+      <workItem from="1567604365265" duration="27400000" />
+      <workItem from="1568011019179" duration="3393000" />
     </task>
-    <task id="LOCAL-00001" summary="Commit 1, problems with first test">
-      <created>1563369833968</created>
+    <task id="LOCAL-00001" summary="gitignore">
+      <created>1567707419699</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1563369833968</updated>
+      <updated>1567707419699</updated>
     </task>
     <task id="LOCAL-00002" summary="Commit 1, problems with first test">
       <created>1563370412096</created>
@@ -1016,59 +846,49 @@
       <option name="project" value="LOCAL" />
       <updated>1567631306786</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BookServiceImplTest_updateBookTest - 2019.08.22 at 14h 08m 24s.xml">
-      <configuration name="BookServiceImplTest.updateBookTest" configurationId="JUnit" />
+    <history-entry file="BookServiceImplTest - 2019.09.05 at 22h 12m 29s.xml">
+      <configuration name="BookServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookServiceImplTest_updateBookTest - 2019.08.22 at 14h 14m 41s.xml">
-      <configuration name="BookServiceImplTest.updateBookTest" configurationId="JUnit" />
+    <history-entry file="GenreServiceImplTest - 2019.09.05 at 22h 13m 04s.xml">
+      <configuration name="GenreServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookServiceImplTest_updateBookTest - 2019.08.22 at 14h 20m 12s.xml">
-      <configuration name="BookServiceImplTest.updateBookTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthorDaoImplTest - 2019.08.22 at 15h 21m 59s.xml">
-      <configuration name="AuthorDaoImplTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.08.31 at 13h 51m 29s.xml">
+    <history-entry file="UserServiceImplTest - 2019.09.05 at 22h 13m 13s.xml">
       <configuration name="UserServiceImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.08.31 at 13h 52m 25s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="RoleDaoImplTest_findByNameTest - 2019.09.06 at 13h 23m 58s.xml">
+      <configuration name="RoleDaoImplTest.findByNameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.08.31 at 13h 52m 52s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="RoleDaoImplTest_findByNameTest - 2019.09.06 at 13h 34m 30s.xml">
+      <configuration name="RoleDaoImplTest.findByNameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.08.31 at 13h 54m 53s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="RoleDaoImplTest_findByNameTest - 2019.09.06 at 13h 34m 50s.xml">
+      <configuration name="RoleDaoImplTest.findByNameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.08.31 at 13h 56m 44s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="RoleDaoImplTest_findByNameTest - 2019.09.06 at 13h 35m 35s.xml">
+      <configuration name="RoleDaoImplTest.findByNameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceImplTest - 2019.08.31 at 13h 57m 51s.xml">
-      <configuration name="UserServiceImplTest" configurationId="JUnit" />
+    <history-entry file="RoleDaoImplTest_findByNameTest - 2019.09.06 at 13h 54m 35s.xml">
+      <configuration name="RoleDaoImplTest.findByNameTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoImplTest - 2019.09.06 at 14h 57m 17s.xml">
+      <configuration name="UserDaoImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookServiceImplTest - 2019.09.06 at 15h 15m 17s.xml">
+      <configuration name="BookServiceImplTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="447121000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="463326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Persistence" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4975728" visible="true" weight="0.26174498" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4975728" visible="true" weight="0.2657718" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -1080,16 +900,16 @@
       <window_info anchor="bottom" id="Java Enterprise" order="1" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32056737" />
-      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.25531915" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.22269504" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32624114" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32855093" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.50284094" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.28652483" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.39167863" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.390625" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.32765958" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32907802" />
       <window_info anchor="bottom" id="Application Servers" order="16" weight="0.32907802" />
@@ -1100,8 +920,8 @@
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.24966443" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.110067114" />
-      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.14295302" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.110067114" />
+      <window_info anchor="right" id="Database" order="8" weight="0.14295302" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
@@ -1111,401 +931,50 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit 1, problems with first test" />
-    <MESSAGE value="Connection with SQL DB, Service LVL, first test" />
-    <MESSAGE value="DAO with dataSourse, trying 1" />
-    <MESSAGE value="DAO lvl without tests" />
-    <MESSAGE value="clean DAO lvl, but not finish" />
-    <MESSAGE value="a lot of new things" />
-    <option name="LAST_COMMIT_MESSAGE" value="a lot of new things" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/serviceTest/AuthorServiceImplTest.java</url>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/serviceTest/AuthorServiceImplTest.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/serviceTest/AuthorServiceImplTest.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/daoTest/BookDaoImplTest.java</url>
-          <line>42</line>
-          <properties class="daoTest.BookDaoImplTest" method="updateTest">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="40" />
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/daoTest/GenreDaoImplTest.java</url>
-          <line>89</line>
-          <properties class="daoTest.GenreDaoImplTest" method="deleteAllTest">
+          <url>file://$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java</url>
+          <line>49</line>
+          <properties class="daoTest.RoleDaoImplTest" method="findByNameTest">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/daoTest/BookDaoImplTest.java</url>
-          <line>57</line>
-          <properties class="daoTest.BookDaoImplTest" method="getByIdTest">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/test/java/serviceTest/AuthorServiceImplTest.java</url>
-          <line>29</line>
-          <properties field="authorService" class="serviceTest.AuthorServiceImplTest" />
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/rest/GenreRestController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/rest/AuthorRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/rest/BookRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE-sources.jar!/org/springframework/ui/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/exceptions/RoleDoesntExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/exceptions/UserDoesNotExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/exceptions/ChangeExсeption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/GenreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/BookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/AuthorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/GenreServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/test.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk11.0.2/lib/src.zip!/java.base/jdk/internal/reflect/NativeConstructorAccessorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/AuthorDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/AuthorDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="133" column="53" selection-start-line="133" selection-start-column="53" selection-end-line="133" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="115" column="53" selection-start-line="115" selection-start-column="53" selection-end-line="115" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/GenreDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="135" column="53" selection-start-line="135" selection-start-column="53" selection-end-line="135" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/RoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/RoleDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="123" column="53" selection-start-line="123" selection-start-column="53" selection-end-line="123" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/AuthorDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/BookDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/EntityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/GenreDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/RoleDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/BookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/BookServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-241">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/AuthorDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/BookServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fill.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/authorDaoConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/5.1.6.RELEASE/spring-security-config-5.1.6.RELEASE.jar!/org/springframework/security/config/spring-security-5.1.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="1976" column="12" selection-start-line="1976" selection-start-column="12" selection-end-line="1976" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/security/security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <marker date="1567682738566" expanded="true" signature="3262:3305" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/security/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-244">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/UserRegistrationDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -1513,26 +982,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/model/Author.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="281">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/security/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/model/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state relative-caret-position="51">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/model/Genre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1564,10 +1034,201 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/RoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/GenreServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/model/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/AuthorServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/GenreServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="197" column="21" selection-start-line="197" selection-start-column="21" selection-end-line="197" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/security/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-762">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/security/security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/authorDaoConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="3" column="133" selection-start-line="3" selection-start-column="133" selection-end-line="3" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-context.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/AuthorDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="65" column="58" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="65" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/BookDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-986">
+          <caret line="60" column="54" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="60" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/RoleDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="78" lean-forward="true" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/GenreDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="31" column="59" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/daoTest/UserDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/UserServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="134" column="33" selection-start-line="134" selection-start-column="33" selection-end-line="134" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="110" column="36" selection-start-line="110" selection-start-column="36" selection-end-line="110" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/serviceTest/BookServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/service/BookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/BookDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lena/library/dao/BookDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1590,7 +1251,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>Hibernate</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1635,21 +1296,9 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: javax.annotation:jsr250-api:1.0</last-edited>
+          <last-edited>Hibernate 5.4.3-5.4.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

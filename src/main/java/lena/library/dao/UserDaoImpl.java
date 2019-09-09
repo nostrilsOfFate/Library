@@ -88,7 +88,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean existsById(String userId) {
+    public boolean existsById(Integer userId) {
         return jdbcTemplate.update("select from library.users where id = ?", userId) != 0;
     }
 
@@ -98,7 +98,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> findAllByIdIn(List<String> ids) {
+    public List<User> findAllByIdIn(List<Integer> ids) {
         return jdbcTemplate.query("SELECT * FROM library.users", new RowMapper<User>() {
             public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                 return fillUser(rs);
@@ -121,8 +121,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Boolean deleteByName(String name) {
-        return jdbcTemplate.update("delete from library.users where name = ?", name)!=0;
+    public Boolean deleteByEmail(String email) {
+        return jdbcTemplate.update("delete from library.users where email = ?", email)!=0;
     }
 
 

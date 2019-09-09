@@ -13,18 +13,17 @@ public interface UserDao {
 
     User findById(Integer userId);
 
-    boolean existsById(String userId);
+    boolean existsById(Integer userId);
 
     boolean existsByEmail(String email);
 
-    List<User> findAllByIdIn(List<String> ids);
+    List<User> findAllByIdIn(List<Integer> ids);
 
     void deleteAll();
 
     Boolean deleteById(Integer id);
 
-    Boolean deleteByName(String name);
-
+    Boolean deleteByEmail(String email);
     List<User> getAllUsers();
 }
 

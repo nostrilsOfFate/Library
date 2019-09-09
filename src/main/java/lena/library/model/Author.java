@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "data_genre.authors")
+@Table(name = "library.authors")
 public class Author {
 
     @Id
@@ -22,7 +22,7 @@ public class Author {
     private String name;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "data_genre.authors_books",
+    @JoinTable(name = "library.authors_books",
             joinColumns = @JoinColumn(name = "author_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id")
     )

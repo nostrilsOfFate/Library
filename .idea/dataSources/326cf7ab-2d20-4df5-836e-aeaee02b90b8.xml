@@ -22,341 +22,451 @@
     <table id="11" parent="4" name="books"/>
     <table id="12" parent="4" name="genres"/>
     <table id="13" parent="4" name="genres_books"/>
-    <table id="14" parent="8" name="authors"/>
-    <table id="15" parent="8" name="authors_books"/>
-    <table id="16" parent="8" name="books"/>
-    <table id="17" parent="8" name="genre"/>
-    <table id="18" parent="8" name="genres"/>
-    <table id="19" parent="8" name="genres_books"/>
-    <column id="20" parent="9" name="id">
+    <table id="14" parent="4" name="roles"/>
+    <table id="15" parent="4" name="roles_users"/>
+    <table id="16" parent="4" name="users"/>
+    <table id="17" parent="8" name="authors"/>
+    <table id="18" parent="8" name="authors_books"/>
+    <table id="19" parent="8" name="books"/>
+    <table id="20" parent="8" name="genre"/>
+    <table id="21" parent="8" name="genres"/>
+    <table id="22" parent="8" name="genres_books"/>
+    <column id="23" parent="9" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="21" parent="9" name="name">
+    <column id="24" parent="9" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="22" parent="9" name="PRIMARY">
+    <index id="25" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="23" parent="9" name="PRIMARY">
+    <key id="26" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="24" parent="10" name="author_id">
+    <column id="27" parent="10" name="author_id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="10" name="book_id">
+    <column id="28" parent="10" name="book_id">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="26" parent="10" name="PRIMARY">
+    <index id="29" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>author_id
 book_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="27" parent="10" name="fk_book1_id">
+    <index id="30" parent="10" name="fk_book1_id">
       <ColNames>book_id</ColNames>
     </index>
-    <key id="28" parent="10" name="PRIMARY">
+    <key id="31" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>author_id
 book_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="29" parent="10" name="fk_author_id">
+    <foreign-key id="32" parent="10" name="fk_author_id">
       <ColNames>author_id</ColNames>
       <RefSchemaName>library</RefSchemaName>
       <RefTableName>authors</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="30" parent="10" name="fk_book1_id">
+    <foreign-key id="33" parent="10" name="fk_book1_id">
       <ColNames>book_id</ColNames>
       <RefSchemaName>library</RefSchemaName>
       <RefTableName>books</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="31" parent="11" name="id">
+    <column id="34" parent="11" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="32" parent="11" name="name">
+    <column id="35" parent="11" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="11" name="description">
+    <column id="36" parent="11" name="description">
       <Position>3</Position>
       <DataType>VARCHAR(300)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="11" name="writtenYear">
+    <column id="37" parent="11" name="writtenYear">
       <Position>4</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="11" name="readed">
+    <column id="38" parent="11" name="readed">
       <Position>5</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="36" parent="11" name="PRIMARY">
+    <index id="39" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="11" name="PRIMARY">
+    <key id="40" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="12" name="id">
+    <column id="41" parent="12" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="39" parent="12" name="name">
+    <column id="42" parent="12" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="40" parent="12" name="PRIMARY">
+    <index id="43" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="41" parent="12" name="PRIMARY">
+    <key id="44" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="42" parent="13" name="genre_id">
+    <column id="45" parent="13" name="genre_id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="13" name="book_id">
+    <column id="46" parent="13" name="book_id">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="44" parent="13" name="PRIMARY">
+    <index id="47" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>genre_id
 book_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="45" parent="13" name="fk_book_id">
+    <index id="48" parent="13" name="fk_book_id">
       <ColNames>book_id</ColNames>
     </index>
-    <key id="46" parent="13" name="PRIMARY">
+    <key id="49" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>genre_id
 book_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="47" parent="13" name="fk_genre_id">
+    <foreign-key id="50" parent="13" name="fk_genre_id">
       <ColNames>genre_id</ColNames>
       <RefSchemaName>library</RefSchemaName>
       <RefTableName>genres</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="48" parent="13" name="fk_book_id">
+    <foreign-key id="51" parent="13" name="fk_book_id">
       <ColNames>book_id</ColNames>
       <RefSchemaName>library</RefSchemaName>
       <RefTableName>books</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="49" parent="14" name="id">
+    <column id="52" parent="14" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="50" parent="14" name="name">
+    <column id="53" parent="14" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="51" parent="14" name="PRIMARY">
+    <index id="54" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="52" parent="14" name="PRIMARY">
+    <key id="55" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="53" parent="15" name="author_id">
+    <column id="56" parent="15" name="role_id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="54" parent="15" name="book_id">
+    <column id="57" parent="15" name="user_id">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="55" parent="15" name="PRIMARY">
+    <index id="58" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id
+user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="59" parent="15" name="fk_user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="60" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id
+user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="61" parent="15" name="fk_role_id">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>library</RefSchemaName>
+      <RefTableName>roles</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="62" parent="15" name="fk_user_id">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>library</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="63" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="16" name="email">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="16" name="password">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="16" name="firstName">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="16" name="lastName">
+      <Position>5</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="16" name="enabled">
+      <Position>6</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
+    </column>
+    <column id="69" parent="16" name="lastLogin">
+      <Position>7</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="71" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="72" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="73" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="74" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="76" parent="18" name="author_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="18" name="book_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="78" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>author_id
 book_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="56" parent="15" name="fk_book1_id">
+    <index id="79" parent="18" name="fk_book1_id">
       <ColNames>book_id</ColNames>
     </index>
-    <key id="57" parent="15" name="PRIMARY">
+    <key id="80" parent="18" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>author_id
 book_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="58" parent="15" name="fk_author_id">
+    <foreign-key id="81" parent="18" name="fk_author_id">
       <ColNames>author_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>authors</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="59" parent="15" name="fk_book1_id">
+    <foreign-key id="82" parent="18" name="fk_book1_id">
       <ColNames>book_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>books</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="60" parent="16" name="id">
+    <column id="83" parent="19" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="61" parent="16" name="name">
+    <column id="84" parent="19" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="62" parent="16" name="description">
+    <column id="85" parent="19" name="description">
       <Position>3</Position>
       <DataType>VARCHAR(300)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="63" parent="16" name="writtenYear">
+    <column id="86" parent="19" name="writtenYear">
       <Position>4</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="64" parent="16" name="readed">
+    <column id="87" parent="19" name="readed">
       <Position>5</Position>
       <DataType>TINYINT(3)|-6s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="65" parent="16" name="PRIMARY">
+    <index id="88" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="66" parent="16" name="PRIMARY">
+    <key id="89" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="67" parent="17" name="id">
+    <column id="90" parent="20" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="68" parent="17" name="name">
+    <column id="91" parent="20" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="69" parent="17" name="PRIMARY">
+    <index id="92" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="70" parent="17" name="PRIMARY">
+    <key id="93" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="71" parent="18" name="id">
+    <column id="94" parent="21" name="id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="72" parent="18" name="name">
+    <column id="95" parent="21" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="73" parent="18" name="PRIMARY">
+    <index id="96" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="74" parent="18" name="PRIMARY">
+    <key id="97" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="75" parent="19" name="genre_id">
+    <column id="98" parent="22" name="genre_id">
       <Position>1</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="76" parent="19" name="book_id">
+    <column id="99" parent="22" name="book_id">
       <Position>2</Position>
       <DataType>INT(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="77" parent="19" name="PRIMARY">
+    <index id="100" parent="22" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>genre_id
 book_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="78" parent="19" name="fk_book_id">
+    <index id="101" parent="22" name="fk_book_id">
       <ColNames>book_id</ColNames>
     </index>
-    <key id="79" parent="19" name="PRIMARY">
+    <key id="102" parent="22" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>genre_id
 book_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="80" parent="19" name="fk_genre_id">
+    <foreign-key id="103" parent="22" name="fk_genre_id">
       <ColNames>genre_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>genres</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="81" parent="19" name="fk_book_id">
+    <foreign-key id="104" parent="22" name="fk_book_id">
       <ColNames>book_id</ColNames>
       <RefSchemaName>test</RefSchemaName>
       <RefTableName>books</RefTableName>

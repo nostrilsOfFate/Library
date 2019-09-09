@@ -100,7 +100,8 @@ public class BookServiceImplTest {
         genreDao.insert(genre);
         genreDao.insert(genre1);
         Book book = bookDao.getAllBooks().get(0);
-        Book book1 = bookService.updateBook(book.getId(), "Жизнь", 1999, "Текст", authors, genres);
+        Book book1 = bookService.updateBook(book.getId(),
+                "Жизнь", 1999, "Текст", authors, genres);
         assertNotNull(book1);
         assertEquals("Жизнь", book1.getName());
         assertNotNull(book1.getId());

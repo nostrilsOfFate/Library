@@ -30,7 +30,7 @@ public class RoleDaoImplTest {
 
     @BeforeEach
     public void init() {
-        Role role = new Role( "Александрова Е.В.");
+        Role role = new Role( "member");
         roleDao.create(role);
     }
 
@@ -48,10 +48,9 @@ public class RoleDaoImplTest {
     }
     @Test
     public void findByNameTest() {
-        Role role = new Role();
-        role.setName("админ");
+        Role role = roleDao.getAllRoles().get(0);
         Role role1 = roleDao.findByName(role.getName());
-        assertEquals(role.getName(), role1.getName());
+        assertEquals("member", role1.getName());
     }
     @Test
     public void getAllRolesTest() throws DataAccessException {

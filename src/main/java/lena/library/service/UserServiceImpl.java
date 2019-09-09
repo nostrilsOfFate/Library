@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean isUserExistsById(String userId) {
+    public Boolean isUserExistsById(Integer userId) {
         if (!userDao.existsById(userId)) {
             throw new UserDoesNotExistsException("User with ID <" + userId + "> doesn't exist.");
         }
@@ -112,7 +112,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAllByIdIn(List<String> ids) {
+    public List<User> findAllByIdIn(List<Integer> ids) {
         return userDao.findAllByIdIn(ids);
     }
 

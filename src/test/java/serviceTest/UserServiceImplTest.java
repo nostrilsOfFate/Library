@@ -109,7 +109,7 @@ class UserServiceImplTest {
     @Test
     void isUserExistsById() {
         User expected = userDao.getAllUsers().get(0);
-        Boolean b = userService.isUserExistsById(expected.getId().toString());
+        Boolean b = userService.isUserExistsById(expected.getId());
         assertTrue(b);
     }
 
@@ -131,8 +131,8 @@ class UserServiceImplTest {
     @Test
     void findAllByIdIn() {
         User expected = userDao.getAllUsers().get(0);
-        List<String> list = new ArrayList<>();
-        list.add(expected.getId().toString());
+        List<Integer> list = new ArrayList<>();
+        list.add(expected.getId());
         List<User> users = userService.findAllByIdIn(list);
         users.forEach(u -> assertEquals(expected.getId(), u.getId()));
         assertEquals(1, list.size());

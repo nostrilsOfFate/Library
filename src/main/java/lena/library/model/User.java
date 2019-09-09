@@ -11,7 +11,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "data_genre.users")
+@Table(name = "library.users")
 public class User {
 
     @Id

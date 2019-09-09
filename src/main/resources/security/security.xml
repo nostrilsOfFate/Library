@@ -41,7 +41,7 @@
 	         http://www.springframework.org/schema/security
 	         http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <http pattern="/resources/**" security="none"/>
+    <!--<http pattern="/resources/**" security="none"/>-->
     <http pattern="/webjars/**" security="none"/>
 
     <http pattern="/rest/**" use-expressions="true" name="restSecurityFilterChain" create-session="stateless">
@@ -56,15 +56,15 @@
     </beans:bean>
 
     <http auto-config='true'>
-         <!--возможный косяк в дубляже паттерна-->
-        <intercept-url pattern="/**" access="ROLE_USER" />
+        <!--возможный косяк в дубляже паттерна-->
+        <intercept-url pattern="/" access="ROLE_USER" />
 
 
         <intercept-url pattern="/login" access="isAnonymous()"/>
         <intercept-url pattern="/register" access="isAnonymous()"/>
 
-        <intercept-url pattern="/**/admin/**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="//admin/" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/" access="isAuthenticated()"/>
 
         <form-login login-page="/login" default-target-url="/restaurants"
                     authentication-failure-url="/login?error=true"

@@ -17,13 +17,13 @@ public interface UserService extends UserDetailsService {
 
     User findById(Integer userId);
 
-    Boolean isUserExistsById(String userId);
+    Boolean isUserExistsById(Integer userId);
 
     Boolean isUserExistsByEmail(String email);
 
     List<User> findAll();
 
-    List<User> findAllByIdIn(List<String> ids);
+    List<User> findAllByIdIn(List<Integer> ids);
 
     Boolean delete(Integer userId);
 
